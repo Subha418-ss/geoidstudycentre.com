@@ -1,1 +1,250 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Current News & Updates | GEOID STUDY CENTRE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans Bengali", "Poppins", sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.8;
+    }
+
+    /* Header Section */
+    header {
+      background: linear-gradient(135deg, #004aad, #0078ff);
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 8px;
+    }
+
+    .logo h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffdd57;
+    }
+
+    /* News Section */
+    .news-container {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .news-header-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 4px solid #004aad;
+    }
+
+    .news-content {
+      padding: 25px;
+    }
+
+    .news-content h2 {
+      font-size: 1.5rem;
+      font-family: Noto Serif Bengali;
+      font-weight: 700;
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .sub-heading {
+      font-size: 1rem;
+      font-family: Noto Serif Bengali;
+      color: #4d26ea;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .news-body {
+      font-size: 1rem;
+      font-family: Noto Serif Bengali;
+      color: #333;
+      white-space: pre-line;
+      text-align: justify;
+    }
+
+    .inline-img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Footer Section */
+    footer {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        margin: 8px;
+      }
+
+      .news-header-img {
+        height: 200px;
+      }
+
+      .news-content h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo h1 {
+        font-size: 1rem;
+      }
+
+      .news-header-img {
+        height: 180px;
+      }
+
+      .news-content {
+        padding: 18px;
+      }
+
+      .news-body {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="" alt="GEOID Logo">
+        <h1>GEOID STUDY CENTRE</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="notice.html">Notice</a></li>
+          <li><a href="news.html" style="color:#ffdd57;">News</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- News Article -->
+  <section class="news-container">
+    <img src="h" alt="Cyclone Mantha" class="news-header-img">
+
+    <div class="news-content">
+      <h2>‘মান্থা’ ঘূর্ণিঝড়ের জন্ম আজই! কলকাতায় বৃষ্টি শুরু, রাজ্যে কেমন প্রভাব পড়বে?</h2>
+      <div class="sub-heading">দক্ষিণ-পূর্ব বঙ্গোপসাগরে তৈরি অতি গভীর নিম্নচাপ ঘূর্ণিঝড়ে পরিণত হতে চলেছে ‘মান্থা’, উপকূলে জারি সতর্কতা, জগদ্ধাত্রী ও ছট পুজোয় ভিজবে রাজ্য</div>
+
+      <div class="news-body">
+কলকাতা: ঘূর্ণিঝড় ‘মান্থা’ (Cyclone Mantha) জন্মের কাউন্টডাউন শুরু হয়ে গিয়েছে। শনিবার রাত থেকেই দক্ষিণ-পূর্ব বঙ্গোপসাগরে তৈরি অতি গভীর নিম্নচাপ আরও শক্তিশালী হচ্ছে। আবহাওয়া দফতর জানিয়েছে, আগামী ১২ ঘণ্টার মধ্যেই এটি ঘূর্ণিঝড়ে পরিণত হবে। ইতিমধ্যেই কলকাতা, হাওড়া ও পার্শ্ববর্তী এলাকায় ঝিরিঝিরি বৃষ্টি শুরু হয়েছে। রবিবার সকাল ১১টার আপডেট অনুযায়ী, নিম্নচাপের অবস্থান পোর্ট ব্লেয়ার থেকে প্রায় ৬০০ কিমি পশ্চিমে, এবং বিশাখাপত্তনম থেকে প্রায় ৮০০ কিমি দক্ষিণ-পূর্বে। ঘূর্ণিঝড় আকারে রূপান্তরিত হয়ে এটি উত্তর-পশ্চিম দিকে এগোবে বলে জানিয়েছে IMD (India Meteorological Department)।
+
+<img src="https://i0.wp.com/najarbandi.in/wp-content/uploads/2025/10/mantha-1.webp?resize=696%2C419&quality=80&ssl=1" alt="Cyclone Path" class="inline-img">
+
+‘মান্থা’ ঘূর্ণিঝড়ের সম্ভাব্য পথ ও ল্যান্ডফল সময়: আবহাওয়া দফতর সূত্রে জানা গিয়েছে, ২৮ অক্টোবর সকালে এটি প্রবল ঘূর্ণিঝড়ে পরিণত হতে পারে। সন্ধ্যা বা রাতে অন্ধ্রপ্রদেশের মছলিপত্তনম ও কলিঙ্গপত্তনমের মধ্যবর্তী এলাকায়, মূলত কাঁকিনাড়ার কাছাকাছি উপকূলে ল্যান্ডফল ঘটতে পারে। ল্যান্ডফলের সময় বাতাসের গতি ঘণ্টায় ৯০ থেকে ১০০ কিমি, সর্বোচ্চ ১১০ কিমি পর্যন্ত পৌঁছাতে পারে। এর ফলে সমুদ্র হবে অশান্ত, এবং উপকূলবর্তী এলাকায় জলোচ্ছ্বাসের আশঙ্কা রয়েছে।
+
+দক্ষিণবঙ্গে কী প্রভাব ফেলবে ‘মান্থা’? ২৮ অক্টোবর থেকেই দক্ষিণবঙ্গের আকাশ মেঘলা থাকবে। কলকাতা, হাওড়া, হুগলি, দুই মেদিনীপুর ও দুই চব্বিশ পরগনায় হালকা থেকে মাঝারি বৃষ্টি শুরু হবে। দক্ষিণ ২৪ পরগনা ও পূর্ব মেদিনীপুরে ভারী বৃষ্টির সম্ভাবনা রয়েছে।
+
+২৯ অক্টোবর বৃষ্টির পরিমাণ বাড়বে। বিশেষ করে উত্তর ও দক্ষিণ ২৪ পরগনা, হাওড়া, ঝাড়গ্রাম এবং পশ্চিম মেদিনীপুরে ভারী বৃষ্টির সতর্কতা জারি হয়েছে।
+
+৩০ অক্টোবর পুরুলিয়া, বীরভূম, বর্ধমান ও মুর্শিদাবাদেও ভারী বৃষ্টি হতে পারে। তবে ৩১ অক্টোবর থেকে বৃষ্টির তীব্রতা কমবে, যদিও উত্তরবঙ্গের কয়েকটি জেলায় তখনও ভারী বর্ষণের সম্ভাবনা রয়েছে।
+
+<img src="https://i0.wp.com/najarbandi.in/wp-content/uploads/2025/10/mantha-2.webp?resize=696%2C419&quality=80&ssl=1" alt="Rain in Kolkata" class="inline-img">
+
+মৎস্যজীবীদের জন্য কঠোর সতর্কতা জারি: পশ্চিমবঙ্গ প্রশাসন ও IMD কলকাতা স্পষ্ট নির্দেশ দিয়েছে — ২৭ অক্টোবরের মধ্যে সমস্ত মৎস্যজীবীকে সমুদ্র থেকে ফিরতে হবে। ২৮ থেকে ৩০ অক্টোবর পর্যন্ত বঙ্গোপসাগরে মাছ ধরতে যাওয়া সম্পূর্ণ নিষিদ্ধ। সমুদ্র থাকবে অত্যন্ত উত্তাল, তাই উপকূলবর্তী এলাকা থেকে নৌকাগুলি সরিয়ে রাখার পরামর্শও দেওয়া হয়েছে।
+
+উত্তরবঙ্গেও প্রভাব ফেলবে ‘মান্থা’: ৩০ ও ৩১ অক্টোবর উত্তরবঙ্গের বেশ কিছু জেলায় ভারী বৃষ্টির পূর্বাভাস। বিশেষ করে মালদা, উত্তর ও দক্ষিণ দিনাজপুর, জলপাইগুড়ি, দার্জিলিং, কালিম্পং, কোচবিহার ও আলিপুরদুয়ারে বৃষ্টির সম্ভাবনা রয়েছে। এই দুই দিন হলুদ সতর্কতা (Yellow Alert) জারি করেছে আবহাওয়া দফতর।
+
+পুজোর মেজাজে ছেদ, কিন্তু বিপদের আশঙ্কা কম: জগদ্ধাত্রী ও ছট পুজোর সময়ে বৃষ্টি কিছুটা বিঘ্ন ঘটাতে পারে বটে, তবে আবহাওয়াবিদদের দাবি, এই ঘূর্ণিঝড়ের মূল প্রভাব বেশি পড়বে অন্ধ্র উপকূলে। বাংলায় মারাত্মক ক্ষতির আশঙ্কা কম, তবে বজ্রবিদ্যুৎ-সহ বৃষ্টির সম্ভাবনা থাকায় সতর্ক থাকার পরামর্শ।
+
+‘মান্থা’ ঘূর্ণিঝড়ের নজরদারিতে পুরো রাজ্য। কলকাতায় বৃষ্টি শুরু হলেও ভয় নয়, সতর্কতাই একমাত্র বুদ্ধিমানের কাজ। পরবর্তী ২৪ ঘণ্টা পরিস্থিতি কোনদিকে মোড় নেয়, তাকিয়ে থাকবে রাজ্যবাসী ও প্রশাসন।
+
+Source : নজরবন্দি 
+Publish : Sunday 25 October 2025, 10:11 PM
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Source: <b>najarbandi.in</b> | © 2025 GEOID STUDY CENTRE | Designed by <b>Subhadip Satpati</b>
+  </footer>
+
+</body>
+</html>
+
 
