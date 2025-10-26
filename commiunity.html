@@ -97,10 +97,12 @@ header::before {
   box-shadow: 0 25px 50px rgba(0,0,0,0.25), 0 8px 15px rgba(0,0,0,0.1);
 }
 
+/* Image Styling with Aspect Ratio for Mobile */
 .community-card img {
   width: 100%;
-  height: 260px; /* Bigger image for full widget feel */
+  aspect-ratio: 4/3; /* maintain width to height ratio */
   object-fit: cover;
+  object-position: top; /* keep the top visible */
   transition: transform 0.4s ease;
 }
 
@@ -191,7 +193,7 @@ footer .madein {
 /* Responsive */
 @media(max-width: 768px) {
   .community-card img {
-    height: 220px;
+    aspect-ratio: 1; /* make images more square on tablets */
   }
 }
 
@@ -199,9 +201,6 @@ footer .madein {
   header {
     font-size: 28px;
     padding: 25px 0;
-  }
-  .community-card img {
-    height: 200px;
   }
   .join-btn {
     padding: 10px 20px;
@@ -219,7 +218,7 @@ footer .madein {
 
   <div class="community-grid">
     <div class="community-card">
-      <img src="https://olympic-salmon-adctshbmjs.edgeone.app/Ceo.jpg" alt="Member Photo">
+      <img src="https://olympic-salmon-adctshbmjs.edgeone.app/Ceo.jpg" alt="Sukdeb Das">
       <div class="community-card-content">
         <h3>Sukdeb Das</h3>
         <p>Founder & Mentor</p>
@@ -228,7 +227,7 @@ footer .madein {
     </div>
 
     <div class="community-card">
-      <img src="https://fundamental-cyan-wblfgqhzge.edgeone.app/subhadip.jpg" alt="Member Photo">
+      <img src="https://fundamental-cyan-wblfgqhzge.edgeone.app/subhadip.jpg" alt="Subhadip Satpati">
       <div class="community-card-content">
         <h3>Subhadip Satpati</h3>
         <p>Developer & Admin</p>
@@ -237,16 +236,16 @@ footer .madein {
     </div>
 
     <div class="community-card">
-      <img src="https://legitimate-magenta-oxhostjggp.edgeone.app/Susrita.jpg" alt="Member Photo">
+      <img src="https://legitimate-magenta-oxhostjggp.edgeone.app/Susrita.jpg" alt="Susrita Giri">
       <div class="community-card-content">
         <h3>Susrita Giri</h3>
-        <p>Ex - Student of Geoid Study Centre and Topper. She currently studies at Techno India</p>
+        <p>Ex-Student of Geoid Study Centre and Topper. She currently studies at Techno India</p>
         <a href="#" class="join-btn">Connect</a>
       </div>
     </div>
     
     <div class="community-card">
-      <img src="https://technical-emerald-m17ryypvki.edgeone.app/vola.jpg" alt="Member Photo">
+      <img src="https://technical-emerald-m17ryypvki.edgeone.app/vola.jpg" alt="Sanjay Ranjit">
       <div class="community-card-content">
         <h3>Sanjay Ranjit</h3>
         <p>Ex-Student and currently studying at Karnataka University (Geography honours)</p>
@@ -267,7 +266,7 @@ footer .madein {
     <a href="#">Website Developer</a> |
     <span>Version 2.0.0</span>
   </div>
-  <p class="madein">❤️ Made in India</p>
+  <p class="madein">❤ Made in India</p>
   <p>© 2025 GEOID STUDY CENTRE. All rights reserved.</p>
 </footer>
 
