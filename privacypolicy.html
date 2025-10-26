@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | EduVision Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{
+    margin:0;padding:0;box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+  }
+  body{
+    background: linear-gradient(135deg,#dcedc8,#f1f8e9);
+    color:#333;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+  }
+
+  /* Header */
+  header{
+    background:linear-gradient(135deg,#004d40,#00796b);
+    color:#fff;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 5px 25px rgba(0,0,0,0.3);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(6px);
+  }
+  header h1{
+    font-size:1.9rem;
+    font-weight:700;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#a5d6a7,#fff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  nav ul{list-style:none;display:flex;gap:25px;}
+  nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+    transition:0.3s;
+  }
+  nav ul li a::after{
+    content:"";
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    width:0%;
+    height:2px;
+    background:#a5d6a7;
+    transition:0.4s;
+  }
+  nav ul li a:hover::after{width:100%;}
+  nav ul li a:hover{color:#a5d6a7;}
+
+  /* Hero Section */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,rgba(0,77,64,0.85),rgba(0,150,136,0.85)),
+    url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    text-align:center;
+    color:#fff;
+    padding:120px 20px 100px;
+    overflow:hidden;
+  }
+  .hero h2{
+    font-size:3rem;
+    font-weight:700;
+    text-shadow:0 4px 15px rgba(0,0,0,0.4);
+    animation: fadeInDown 1s ease;
+  }
+  .hero p{
+    margin-top:15px;
+    font-size:1.2rem;
+    color:#e0f2f1;
+    animation: fadeInUp 1.2s ease;
+  }
+  @keyframes fadeInDown{from{opacity:0;transform:translateY(-40px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+
+  /* Container */
+  .container{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+    background:linear-gradient(180deg,#e8f5e9,#f1f8e9);
+    perspective:1200px;
+  }
+
+  /* 3D Card */
+  .policy-card{
+    background:rgba(255,255,255,0.8);
+    border-radius:25px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.3);
+    max-width:900px;
+    padding:50px 45px;
+    text-align:left;
+    transform-style:preserve-3d;
+    transition:transform 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.3);
+  }
+  .policy-card:hover{
+    transform:rotateY(5deg) rotateX(3deg);
+    box-shadow:0 35px 70px rgba(0,0,0,0.35);
+  }
+
+  .policy-card h2{
+    text-align:center;
+    font-size:2.3rem;
+    color:#004d40;
+    margin-bottom:25px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.2);
+    animation: slideIn 1s ease;
+  }
+  @keyframes slideIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+  .policy-card h3{
+    color:#00695c;
+    margin-top:25px;
+    margin-bottom:10px;
+    font-size:1.15rem;
+  }
+  .policy-card p{
+    color:#444;
+    text-align:justify;
+    margin-bottom:15px;
+    font-size:1rem;
+    line-height:1.7;
+  }
+
+  .back-btn{
+    display:inline-block;
+    margin-top:30px;
+    background:linear-gradient(135deg,#004d40,#00796b);
+    color:#fff;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.4s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  }
+  .back-btn:hover{
+    background:linear-gradient(135deg,#a5d6a7,#43a047);
+    color:#003300;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  }
+
+  /* Scroll animation */
+  .reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.9s ease;
+  }
+  .reveal.active{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* Footer */
+  footer{
+    background:#004d40;
+    color:#fff;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:auto;
+    box-shadow:0 -5px 20px rgba(0,0,0,0.3);
+  }
+  footer a{
+    color:#a5d6a7;
+    text-decoration:none;
+    font-weight:600;
+  }
+  footer a:hover{text-decoration:underline;}
+  .madein{
+    margin-top:8px;
+    font-size:0.85rem;
+    color:#e0f2f1;
+  }
+
+  @media(max-width:768px){
+    header{flex-direction:column;gap:10px;}
+    .hero h2{font-size:2.2rem;}
+    .policy-card{padding:35px 25px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>GEOID STUDY CENTRE </h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h2>Privacy Policy</h2>
+  <p>Your data. Your privacy. Our responsibility.</p>
+</section>
+
+<!-- 3D Card Section -->
+<div class="container">
+  <div class="policy-card reveal">
+    <h2>Our Commitment to Your Privacy</h2>
+
+    <p>
+      At <strong>GEOID STUDY CENTRE </strong>, we are committed to protecting your personal information 
+      and maintaining transparency about how your data is collected, used, and safeguarded.
+    </p>
+
+    <h3>1. Information We Collect</h3>
+    <p>
+      We collect personal details such as your name, email, contact information, and academic records 
+      when you enroll or interact with our website.
+    </p>
+
+    <h3>2. How We Use Your Information</h3>
+    <p>
+      We use your information to manage admissions, provide updates, and improve our educational 
+      experience. We never sell or misuse your data.
+    </p>
+
+    <h3>3. Cookies and Analytics</h3>
+    <p>
+      Our website uses cookies to optimize user experience and analyze site traffic. You can disable 
+      cookies through your browser settings.
+    </p>
+
+    <h3>4. Data Security</h3>
+    <p>
+      We apply advanced security protocols and encryption to protect your data from unauthorized 
+      access or loss.
+    </p>
+
+    <h3>5. Third-Party Links</h3>
+    <p>
+      EduVision Institute is not responsible for external websites linked from our platform. We 
+      recommend reviewing their privacy policies.
+    </p>
+
+    <h3>6. Policy Updates</h3>
+    <p>
+      Our privacy policy may be revised periodically. Updated versions will be posted here with 
+      a modified date.
+    </p>
+
+    <h3>7. Contact Us</h3>
+    <p>
+      Have questions? Reach us at <strong>privacy@eduvision.edu.in</strong> for privacy-related inquiries.
+    </p>
+
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>
+    <a href="disclaimer.html">Disclaimer</a> |
+    <a href="retuntpolicy.html">Return & Refund</a> |
+    <a href="#">Contact</a> | Version 1.0.0
+  </p>
+  <p class="madein">🌿 Made in India</p>
+  <p>© 2025 EduVision Institute. All rights reserved.</p>
+</footer>
+
+<script>
+  // 3D tilt effect
+  const card = document.querySelector('.policy-card');
+  card.addEventListener('mousemove', e=>{
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width/2;
+    const centerY = rect.height/2;
+    const rotateX = (y - centerY)/centerY * 5;
+    const rotateY = (x - centerX)/centerX * 5;
+    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  card.addEventListener('mouseleave',()=> card.style.transform='rotateX(0deg) rotateY(0deg)');
+
+  // Scroll reveal animation
+  const reveals = document.querySelectorAll('.reveal');
+  window.addEventListener('scroll',()=>{
+    for(let i=0;i<reveals.length;i++){
+      const windowHeight=window.innerHeight;
+      const revealTop=reveals[i].getBoundingClientRect().top;
+      if(revealTop < windowHeight-100){reveals[i].classList.add('active');}
+    }
+  });
+</script>
+
+</body>
+</html>

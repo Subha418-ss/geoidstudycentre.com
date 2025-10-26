@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Return & Refund Policy | GEOID STUDY CENTRE </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #001f0f, #003d1f);
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Premium 3D Header */
+    header {
+      background: linear-gradient(90deg, #004d26, #007a3d);
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 30px rgba(0,255,120,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(0,255,120,0.7);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #00ff80;
+      transition: 0.3s;
+      border-radius: 10px;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* 3D Animated Container */
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      perspective: 1000px;
+    }
+
+    .policy-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 25px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 40px rgba(0, 255, 120, 0.15);
+      max-width: 850px;
+      padding: 50px 40px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease, box-shadow 0.4s ease;
+      text-align: center;
+    }
+
+    .policy-card:hover {
+      transform: rotateY(5deg) rotateX(3deg);
+      box-shadow: 0 25px 50px rgba(0, 255, 150, 0.3);
+    }
+
+    .policy-card h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      color: #00ff99;
+      text-shadow: 0 0 10px rgba(0,255,180,0.6);
+    }
+
+    .policy-card p {
+      color: #d6f5e0;
+      text-align: justify;
+      margin-bottom: 18px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .highlight {
+      color: #00ff99;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: linear-gradient(90deg, #007a3d, #00c46a);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 15px rgba(0,255,150,0.4);
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #00ff99, #007a3d);
+      box-shadow: 0 0 25px rgba(0,255,180,0.6);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(90deg, #004d26, #003d1f);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9rem;
+      box-shadow: 0 -5px 30px rgba(0,255,120,0.2);
+    }
+
+    footer a {
+      color: #00ff99;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .madein {
+      color: #99ffc2;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .policy-card {
+        padding: 30px 20px;
+      }
+
+      .policy-card h2 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>GEOID STUDY CENTRE </h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 3D Return & Refund Policy Card -->
+  <div class="container">
+    <div class="policy-card">
+      <h2>Return & Refund Policy</h2>
+
+      <p>
+        At <span class="highlight">GEOID STUDY CENTRE </span>, we strive to provide the best possible educational resources and digital learning experiences. However, as most of our content and courses are digital, we have a clear return and refund policy outlined below.
+      </p>
+
+      <p>
+        <strong>1. Digital Courses:</strong> Once you have purchased and accessed a course, refunds will <span class="highlight">not be issued</span> as digital materials cannot be returned. Please read the course details carefully before purchasing.
+      </p>
+
+      <p>
+        <strong>2. Duplicate Payment:</strong> In case of any accidental duplicate transaction, please contact us within 7 days. After verification, we will initiate a full refund to your original payment method.
+      </p>
+
+      <p>
+        <strong>3. Technical Issues:</strong> If you experience problems accessing a course due to a technical error on our side, we will ensure the issue is fixed promptly or provide an alternative solution.
+      </p>
+
+      <p>
+        <strong>4. Subscription Cancellation:</strong> You can cancel your subscription anytime. However, refunds are not applicable for the current billing period once the content has been accessed.
+      </p>
+
+      <p>
+        <strong>5. Physical Materials:</strong> If applicable, damaged or incorrect physical study materials can be replaced upon valid proof within 7 working days of delivery.
+      </p>
+
+      <p>
+        If you have any refund-related queries, please reach us at <span class="highlight">support@eduvision.in</span> with your payment receipt and details.
+      </p>
+
+      <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="privacypolicy.html">Privacy Policy</a> | <a href="returnpolicy.html">Return & Refund</a> | <a href="#">Contact</a> | Version 1.0.0</p>
+    <p class="madein">💚 Made with care in India</p>
+    <p>© 2025 EduVision Institute. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

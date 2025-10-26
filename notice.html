@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notice Board | Agomoni Skill Developer Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #b2f7ef, #0f4c3a);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #2ecc71, #1abc9c, #27ae60);
+  color: #fff;
+  text-align: center;
+  padding: 35px 0;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 4px 6px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+/* Animated shine effect */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 70%);
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -50%; }
+  50% { left: 100%; }
+  100% { left: -50%; }
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Notice Cards */
+.notice-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 25px 30px;
+  border-left: 8px solid #27ae60;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15), 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.notice-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.25), 0 6px 10px rgba(0,0,0,0.1);
+}
+
+.notice-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f4c3a;
+  margin-bottom: 10px;
+}
+
+.notice-date {
+  font-size: 14px;
+  color: #27ae60;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.notice-desc {
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.download-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.download-btn:hover {
+  background: linear-gradient(45deg, #27ae60, #1e8449);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #27ae60, #145A32);
+  color: white;
+  padding: 35px 20px 20px;
+  font-size: 0.95rem;
+  margin-top: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+footer .footer-links a {
+  color: #b2f7ef;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer .footer-links a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+footer p {
+  text-align: center;
+  margin-top: 10px;
+  color: #dcdcdc;
+}
+
+footer .madein {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #e0f7fa;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+  header {
+    font-size: 28px;
+    padding: 25px 0;
+  }
+  .notice-card {
+    padding: 20px;
+  }
+  .download-btn {
+    padding: 10px 18px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>📢 Latest Notices</header>
+
+<div class="container">
+
+  <div class="notice-card">
+    <div class="notice-title">Admission Form for 2025 Batch Released</div>
+    <div class="notice-date">Date: 26 October 2025</div>
+    <div class="notice-desc">
+      The admission form for new students (Basic Computer, DTP, Spoken English) is now available.
+    </div>
+    <a href="files/admission_form.pdf" class="download-btn" download>⬇ Download Now</a>
+  </div>
+
+  <div class="notice-card">
+    <div class="notice-title">DTP Course Exam Schedule Announced</div>
+    <div class="notice-date">Date: 25 October 2025</div>
+    <div class="notice-desc">
+      The detailed exam routine for DTP course (3-month) has been published. Check the file for exam dates and timings.
+    </div>
+    <a href="files/dtp_exam_schedule.pdf" class="download-btn" download>⬇ Download Now</a>
+  </div>
+
+  <div class="notice-card">
+    <div class="notice-title">Result Published for July 2025 Session</div>
+    <div class="notice-date">Date: 22 October 2025</div>
+    <div class="notice-desc">
+      Students of the July 2025 batch can download their marksheet from the link below.
+    </div>
+    <a href="files/result_july2025.pdf" class="download-btn" download>⬇ Download Now</a>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="disclaimer.html">Disclaimer</a> |
+    <a href="privacypolicy.html">Privacy Policy</a> |
+    <a href="#">Return & Refund</a> |
+    <a href="#contact">Contact</a> |
+    <a href="#">Location</a> |
+    <a href="#">Website Developer</a> |
+    <span>Version 2.0.0</span>
+  </div>
+  <p class="madein">❤️ Made in India</p>
+  <p>© 2025 GEOID STUDY CENTRE. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
