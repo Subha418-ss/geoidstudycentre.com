@@ -58,8 +58,8 @@ header::before {
 
 /* Container */
 .container {
-  width: 90%;
-  max-width: 1100px;
+  width: 95%;
+  max-width: 1200px;
   margin: 40px auto;
   display: flex;
   flex-direction: column;
@@ -68,61 +68,63 @@ header::before {
 
 /* Section Title */
 .section-title {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: #0f4c3a;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 /* Community Cards Grid */
 .community-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 /* Community Member Card */
 .community-card {
-  background: rgba(255,255,255,0.95);
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15), 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(5px);
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .community-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 35px rgba(0,0,0,0.25), 0 6px 10px rgba(0,0,0,0.1);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25), 0 8px 15px rgba(0,0,0,0.1);
 }
 
 .community-card img {
   width: 100%;
-  height: 180px; /* Fixed height for uniform square-ish display */
-  border-radius: 12px; /* Slightly rounded corners */
+  height: 260px; /* Bigger image for full widget feel */
   object-fit: cover;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .community-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+}
+
+.community-card-content {
+  padding: 20px;
+  text-align: center;
 }
 
 .community-card h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #0f4c3a;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .community-card p {
-  font-size: 14px;
+  font-size: 15px;
   color: #555;
   margin-bottom: 15px;
+  line-height: 1.5;
 }
 
 .join-btn {
@@ -130,29 +132,29 @@ header::before {
   background: linear-gradient(45deg, #2ecc71, #27ae60);
   color: white;
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 14px;
+  padding: 12px 25px;
+  border-radius: 15px;
+  font-size: 15px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .join-btn:hover {
   background: linear-gradient(45deg, #27ae60, #1e8449);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 /* Footer */
 footer {
   background: linear-gradient(90deg, #27ae60, #145A32);
   color: white;
-  padding: 35px 20px 20px;
+  padding: 40px 20px 25px;
   font-size: 0.95rem;
   margin-top: auto;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 footer .footer-links {
@@ -187,10 +189,23 @@ footer .madein {
 }
 
 /* Responsive */
-@media(max-width: 600px) {
+@media(max-width: 768px) {
+  .community-card img {
+    height: 220px;
+  }
+}
+
+@media(max-width: 480px) {
   header {
     font-size: 28px;
     padding: 25px 0;
+  }
+  .community-card img {
+    height: 200px;
+  }
+  .join-btn {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 </style>
@@ -205,30 +220,38 @@ footer .madein {
   <div class="community-grid">
     <div class="community-card">
       <img src="https://olympic-salmon-adctshbmjs.edgeone.app/Ceo.jpg" alt="Member Photo">
-      <h3>Sukdeb Das</h3>
-      <p>Founder & Mentor</p>
-      <a href="#" class="join-btn">Connect</a>
+      <div class="community-card-content">
+        <h3>Sukdeb Das</h3>
+        <p>Founder & Mentor</p>
+        <a href="#" class="join-btn">Connect</a>
+      </div>
     </div>
 
     <div class="community-card">
       <img src="https://fundamental-cyan-wblfgqhzge.edgeone.app/subhadip.jpg" alt="Member Photo">
-      <h3>Subhadip Satpati</h3>
-      <p>Developer & Admin</p>
-      <a href="currentlyunavilable.html" class="join-btn">Connect</a>
+      <div class="community-card-content">
+        <h3>Subhadip Satpati</h3>
+        <p>Developer & Admin</p>
+        <a href="currentlyunavilable.html" class="join-btn">Connect</a>
+      </div>
     </div>
 
     <div class="community-card">
       <img src="https://legitimate-magenta-oxhostjggp.edgeone.app/Susrita.jpg" alt="Member Photo">
-      <h3>Susrita Giri</h3>
-      <p>Ex - Student of Geoid Study Centre and Topper. She Currently study in Techno India</p>
-      <a href="#" class="join-btn">Connect</a>
+      <div class="community-card-content">
+        <h3>Susrita Giri</h3>
+        <p>Ex - Student of Geoid Study Centre and Topper. She currently studies at Techno India</p>
+        <a href="#" class="join-btn">Connect</a>
+      </div>
     </div>
     
     <div class="community-card">
       <img src="https://technical-emerald-m17ryypvki.edgeone.app/vola.jpg" alt="Member Photo">
-      <h3>Sanjay Ranjit</h3>
-      <p>Ex-Studet and Currently study in karnataka university (Geography honours)</p>
-      <a href="currentlyunavilable.html" class="join-btn">Connect</a>
+      <div class="community-card-content">
+        <h3>Sanjay Ranjit</h3>
+        <p>Ex-Student and currently studying at Karnataka University (Geography honours)</p>
+        <a href="currentlyunavilable.html" class="join-btn">Connect</a>
+      </div>
     </div>
   </div>
 </div>
