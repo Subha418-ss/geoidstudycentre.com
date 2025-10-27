@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | GEOID STUDY CENTRE</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928DAB);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    perspective: 1000px;
+  }
+
+  .contact-wrapper {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    backdrop-filter: blur(15px);
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotateX(0deg); }
+    50% { transform: translateY(-10px) rotateX(3deg); }
+  }
+
+  .contact-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    z-index: -1;
+    border-radius: 20px;
+    filter: blur(10px);
+    opacity: 0.7;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  p {
+    text-align: center;
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  form input, form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  form input::placeholder, form textarea::placeholder {
+    color: #ccc;
+  }
+
+  form input:focus, form textarea:focus {
+    background: rgba(255,255,255,0.25);
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0,198,255,0.3);
+    outline: none;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,114,255,0.4);
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,114,255,0.6);
+  }
+
+  /* 3D floating background lights */
+  .bg-light {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+    z-index: -2;
+  }
+
+  .light1 {
+    width: 200px;
+    height: 200px;
+    background: #00c6ff;
+    top: 10%;
+    left: 15%;
+    animation: move1 8s infinite alternate;
+  }
+
+  .light2 {
+    width: 250px;
+    height: 250px;
+    background: #0072ff;
+    bottom: 10%;
+    right: 10%;
+    animation: move2 10s infinite alternate;
+  }
+
+  @keyframes move1 {
+    from { transform: translate(0, 0); }
+    to { transform: translate(30px, 50px); }
+  }
+
+  @keyframes move2 {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-40px, -30px); }
+  }
+
+  /* Footer */
+  footer {
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 20px 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+  }
+
+  .footer-content {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .footer-info {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    margin: 0 8px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .footer-social a:hover {
+    color: #00c6ff;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 480px) {
+    .contact-wrapper {
+      padding: 30px 20px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    footer {
+      font-size: 13px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-light light1"></div>
+<div class="bg-light light2"></div>
+
+<div class="contact-wrapper">
+  <h2>Contact Us</h2>
+  <p>We’d love to hear from you</p>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <input type="tel" id="phone" placeholder="Your Phone" required>
+    <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">💬 Send via WhatsApp</button>
+  </form>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-info">
+      📍 GEOID STUDY CENTRE, West Bengal, India<br>
+      📞 +91 8207084112 &nbsp; | &nbsp; ✉ geoidstudycentre@gmail.com<br>
+      🕘 Mon - Sat: 9:00 AM – 7:00 PM
+    </div>
+    <div class="footer-social">
+      <a href="index.html" title="Home">Home</a>
+      <a href="disclaimer.html" title="Disclaimer">Disclaimer</a>
+      <a href="privacypolicy.html" title="Privacy Policy">Privacy Policy</a>
+      <a href="retuntpolicy.html" title="Return & Refund">Return & Refund</a>
+    </div>
+    <div style="margin-top:8px;font-size:12px;color:#bbb;">
+      © 2025 GEOID STUDY CENTRE | Built by Subhadip Satpati
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Replace with your WhatsApp number (without + or spaces)
+    const whatsappNumber = "919876543210";
+
+    const whatsappMessage = `Hello GEOID STUDY CENTRE,%0A%0A📛 Name: ${name}%0A✉️ Email: ${email}%0A📞 Phone: ${phone}%0A💬 Message: ${message}`;
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+
+</body>
+</html>
