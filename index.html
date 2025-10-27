@@ -23,6 +23,13 @@
     top:0;
     z-index:1000;
   }
+  header .logo-area{
+    display:flex;align-items:center;gap:10px;
+  }
+  header img.logo{
+    width:55px;height:55px;border-radius:50%;object-fit:cover;
+    box-shadow:0 3px 8px rgba(0,0,0,0.3);
+  }
   header h1{font-size:1.8rem;text-shadow:2px 2px 8px rgba(0,0,0,0.3);}
   nav ul{display:flex;gap:20px;list-style:none;}
   nav ul li a{
@@ -54,7 +61,7 @@
   .hero a:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(255,211,42,0.6);}
   @keyframes floatText{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 
-  /* SECTIONS */
+
   section{padding:80px 50px;text-align:center;}
   section h2{
     color:#c33a14;font-size:2rem;font-family:Noto Serif Bengali,'Times New Roman',Times,serif;margin-bottom:25px;
@@ -62,14 +69,12 @@
   }
   section h2::after{content:"";width:80px;height:4px;background:linear-gradient(90deg,#01e1ff,#00b4d8);display:block;margin:10px auto 0;border-radius:2px;box-shadow:0 2px 6px rgba(0,180,216,0.4);}
 
-  /* ABOUT */
   .about p{
     max-width:900px;margin:0 auto;font-size:1.2rem;font-family:Noto Serif Bengali;line-height:1.8;color:#444;
     background:rgba(255,255,255,0.15);backdrop-filter:blur(12px);padding:30px;border-radius:20px;
     box-shadow:10px 10px 20px rgba(0,0,0,0.05),-10px -10px 20px rgba(255,255,255,0.3);
   }
 
-  /* COURSES */
   .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:40px;margin-top:40px;}
   .course-card{
     background:rgba(255,255,255,0.2);backdrop-filter:blur(15px);border-radius:20px;padding:30px;
@@ -79,70 +84,62 @@
   .course-card h3{color:#0a3d62;margin-bottom:12px;font-size:1.3rem;}
   .course-card p{color:#555;font-size:0.95rem;}
 
-  /* CONTACT */
-  .contact-info{
-    max-width:750px;margin:0 auto;text-align:left;background:rgba(255,255,255,0.25);
-    backdrop-filter:blur(12px);padding:30px;border-radius:20px;
-    box-shadow:10px 10px 25px rgba(0,0,0,0.08),-10px -10px 25px rgba(255,255,255,0.2);
+  /* GALLERY */
+  .gallery-container {
+    display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px;
+    scrollbar-width:thin;scrollbar-color:#0a3d62 #e0e0e0;opacity:0;transform:translateY(40px);
+    transition:opacity 1s ease,transform 1s ease;
   }
+  .gallery-container.visible{opacity:1;transform:translateY(0);}
+  .gallery-container::-webkit-scrollbar{height:8px;}
+  .gallery-container::-webkit-scrollbar-thumb{background:#0a3d62;border-radius:10px;}
+  .gallery-item{min-width:280px;height:200px;border-radius:20px;overflow:hidden;flex-shrink:0;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.15);transition:transform 0.4s ease,box-shadow 0.4s ease;}
+  .gallery-item:hover{transform:scale(1.05);box-shadow:0 10px 25px rgba(0,0,0,0.25);}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;}
+  .gallery-item:hover img{transform:scale(1.1);}
+
+  /* LIVE SECTION */
+  .live-section {
+    display:flex;flex-wrap:wrap;justify-content:center;gap:40px;align-items:center;
+  }
+  .weather-box, .map-box {
+    background:rgba(255,255,255,0.25);backdrop-filter:blur(15px);
+    border-radius:20px;padding:25px;box-shadow:10px 10px 25px rgba(0,0,0,0.08);
+    flex:1 1 350px;min-height:250px;
+  }
+
+  .contact-info{max-width:750px;margin:0 auto;text-align:left;background:rgba(255,255,255,0.25);backdrop-filter:blur(12px);padding:30px;border-radius:20px;box-shadow:10px 10px 25px rgba(0,0,0,0.08);}
   .contact-info p{margin-bottom:12px;}
   .contact-info strong{color:#0a3d62;}
 
-  /* FOOTER */
-  footer{
-    background:linear-gradient(135deg,#0a3d62,#012a4a);
-    color:#fff;padding:50px 20px;text-align:center;box-shadow:0 -8px 25px rgba(0,0,0,0.2);
-  }
+  footer{background:linear-gradient(135deg,#0a3d62,#012a4a);color:#fff;padding:50px 20px;text-align:center;box-shadow:0 -8px 25px rgba(0,0,0,0.2);}
   footer .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:15px;}
   footer .footer-links a{color:#ffd32a;text-decoration:none;transition:0.3s;}
   footer .footer-links a:hover{color:#fff;text-shadow:0 0 10px #ffd32a;}
   footer .madein{font-size:0.85rem;color:#ffd32a;margin-top:8px;}
 
-  /* FLOATING BUTTON */
-  .whatsapp-float{
-    position:fixed;bottom:25px;right:25px;width:55px;height:55px;border-radius:50%;
+  .whatsapp-float{position:fixed;bottom:25px;right:25px;width:55px;height:55px;border-radius:50%;
     background:radial-gradient(circle at 30% 30%,#25d366,#128c7e);
-    display:flex;justify-content:center;align-items:center;
-    z-index:1000;transition:all 0.3s ease;
-  }
+    display:flex;justify-content:center;align-items:center;z-index:1000;transition:all 0.3s ease;}
   .whatsapp-float img{width:35px;height:35px;}
   .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 10px 25px rgba(0,0,0,0.4);}
 
-  /* RESPONSIVE DESIGN */
-  @media(max-width:1024px){
-    header{padding:20px 30px;}
-    .hero h2{font-size:2.4rem;}
-    .hero p{font-size:1.1rem;}
-  }
   @media(max-width:768px){
-    header{padding:15px 25px;}
     .menu-toggle{display:flex;}
-    nav ul{display:none;flex-direction:column;gap:15px;text-align:center;background:none;}
+    nav ul{display:none;}
     .hero{padding:120px 15px;}
     .hero h2{font-size:2rem;}
-    .hero p{font-size:1rem;}
-    section{padding:60px 20px;}
-    .about p{font-size:1rem;padding:20px;}
-  }
-  @media(max-width:480px){
-    header h1{font-size:1.4rem;}
-    .hero{padding:100px 10px;}
-    .hero h2{font-size:1.4rem;}
-    .hero p{font-size:0.9rem;}
-    section{padding:50px 15px;}
-    .course-card{padding:20px;}
-    .whatsapp-float{width:50px;height:50px;}
-    .whatsapp-float img{width:28px;height:28px;}
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>GEOID STUDY CENTRE</h1>
-  <div class="menu-toggle" id="menu-toggle">
-    <div></div><div></div><div></div>
+  <div class="logo-area">
+    <img src="https://fast-rose-ph5gwphxwv.edgeone.app/logo.jpg" class="logo" alt="Logo">
+    <h1>GEOID STUDY CENTRE</h1>
   </div>
+  <div class="menu-toggle" id="menu-toggle"><div></div><div></div><div></div></div>
   <nav id="nav-menu">
     <ul>
       <li><a href="#hero">Home</a></li>
@@ -153,7 +150,7 @@
       <li><a href="ourteam.html">Our Team</a></li>
       <li><a href="commiunity.html">Community</a></li>
       <li><a href="register.html">Register</a></li>
-      <li><a href="id.html">Current News & Update</a></li>
+      <li><a href="id.html">News & Update</a></li>
     </ul>
   </nav>
 </header>
@@ -166,27 +163,39 @@
 
 <section class="about" id="about">
   <h2>Our Mission</h2>
-  <p>
-    GEOID STUDY CENTRE-এ আমাদের লক্ষ্য হলো উচ্চমানের শিক্ষা এবং ব্যক্তিগতকৃত শিক্ষার মাধ্যমে শিক্ষার্থীদের ক্ষমতায়ন করা।
-    আমরা এমন একটি শিক্ষাবান্ধব পরিবেশ তৈরি করার জন্য প্রতিশ্রুতিবদ্ধ, যেখানে প্রত্যেক শিক্ষার্থী উন্নতি করতে পারে এবং তার
-    একাডেমিক লক্ষ্য অর্জন করতে পারে।
-  </p>
+  <p>GEOID STUDY CENTRE-এ আমাদের লক্ষ্য হলো উচ্চমানের শিক্ষা এবং ব্যক্তিগতকৃত শিক্ষার মাধ্যমে শিক্ষার্থীদের ক্ষমতায়ন করা। আমরা এমন একটি শিক্ষাবান্ধব পরিবেশ তৈরি করার জন্য প্রতিশ্রুতিবদ্ধ, যেখানে প্রত্যেক শিক্ষার্থী উন্নতি করতে পারে এবং তার একাডেমিক লক্ষ্য অর্জন করতে পারে।</p>
 </section>
 
 <section id="courses">
   <h2>Our Courses</h2>
   <div class="courses">
-    <div class="course-card">
-      <h3>WBBSE Class 9</h3>
-      <p>Subject - Geography</p>
+    <div class="course-card"><h3>WBBSE Class 9</h3><p>Subject - Geography</p></div>
+    <div class="course-card"><h3>WBBSE Class 10 (Madhyamik)</h3><p>Subject - Geography</p></div>
+    <div class="course-card"><h3>WBCHSE Class 11 & 12</h3><p>Subject - Geography</p></div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <h2>Our Gallery</h2>
+  <div class="gallery-container" id="gallery">
+    <div class="gallery-item"><img src="https://confident-lavender-napbmekmcx.edgeone.app/banner.png" alt="picture 1"></div>
+    <div class="gallery-item"><img src="https://lh3.googleusercontent.com/ei90I5L5FQUnL0udchGInvfriBUHm2nsGunDTb4kD71IcyuXKwreou2csZhzilvEBvU5LgDY5dB_yb-HzVuHSAM" alt="picture 2"></div>
+    <div class="gallery-item"><img src="https://manual-sapphire-rdobo1mu73.edgeone.app/pic.jpg" alt="picture 3"></div>
+  </div>
+</section>
+
+<!-- ====== LIVE WEATHER + MAP SECTION ====== -->
+<section>
+  <h2>Live Weather, Time & Location</h2>
+  <div class="live-section">
+    <div class="weather-box">
+      <div id="ww_8e836f98f9a75" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl658"],"font":"Times","sl_ics":"one","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
+        <a href="https://weatherwidget.org/" id="ww_8e836f98f9a75_u" target="_blank">Html weather widget</a>
+      </div>
+      <script async src="https://app3.weatherwidget.org/js/?id=ww_8e836f98f9a75"></script>
     </div>
-    <div class="course-card">
-      <h3>WBBSE Class 10 (Madhyamik)</h3>
-      <p>Subject - Geography</p>
-    </div>
-    <div class="course-card">
-      <h3>WBCHSE Class 11 & 12</h3>
-      <p>Subject - Geography</p>
+    <div class="map-box">
+      <iframe src="https://www.google.com/maps?q=GEOID%20STUDY%20CENTRE%20Contai&output=embed" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -194,7 +203,7 @@
 <section class="contact" id="contact">
   <h2>Contact Us</h2>
   <div class="contact-info">
-    <p><strong>Address:</strong> Contai, Central Bustand, Kishorenagar Road, Near Delhi Bazaar, Purba Medinipur, West Bengal, India, 721401</p>
+    <p><strong>Address:</strong> Contai, Central Bustand, Kishorenagar Road, Near Delhi Bazaar, Purba Medinipur, West Bengal, 721401</p>
     <p><strong>Phone:</strong> +91 8207084112</p>
     <p><strong>Email:</strong> geoidstudycentre@gmail.com</p>
     <p><strong>Office Hours:</strong> Mon–Sat, 9 AM – 6 PM</p>
@@ -220,9 +229,13 @@
 </a>
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  menuToggle.addEventListener('click', ()=> navMenu.classList.toggle('active'));
+  const menuToggle=document.getElementById('menu-toggle');
+  const navMenu=document.getElementById('nav-menu');
+  menuToggle.addEventListener('click',()=>navMenu.classList.toggle('active'));
+
+  const gallery=document.getElementById("gallery");
+  const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){gallery.classList.add("visible");}});},{threshold:0.2});
+  observer.observe(gallery);
 </script>
 
 </body>
