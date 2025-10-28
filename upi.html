@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate | Geoid Study Centre</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  .donation-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 95%;
+    max-width: 420px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #00c6ff;
+  }
+  p {
+    font-size: 1rem;
+    color: #d8d8d8;
+    margin-bottom: 20px;
+  }
+  .qr-section {
+    margin: 20px 0;
+  }
+  .qr-section img {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    border: 3px solid #00c6ff;
+  }
+  .donate-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+  }
+  .donate-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,198,255,0.7);
+  }
+  .amount-input {
+    margin-top: 15px;
+  }
+  .amount-input input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+  }
+  footer {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+</style>
+</head>
+<body>
+
+  <div class="donation-card">
+    <h1>Support Geoid Study Centre</h1>
+    <p>Your small contribution helps us grow our foundation and educate more students.</p>
+
+    <div class="qr-section">
+      <!-- Replace this with your generated QR -->
+      <img src="data:image/png;base64,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" alt="Donate QR Code">
+      <p style="margin-top:10px;">Scan & Pay via UPI</p>
+      <p>Also Pay Custom Amount</p>
+    </div>
+
+    <div class="amount-input">
+      <input type="number" id="amt" placeholder="Enter Amount (₹)" min="1" value="50">
+    </div>
+
+    <a href="#" onclick="payNow()" class="donate-btn">Donate Now</a>
+
+    <footer>© 2025 Geoid Study Centre Foundation</footer>
+  </div>
+
+<script>
+function payNow(){
+  const amt = document.getElementById('amt').value;
+  const link = `https://www.upi.me/pay?pa=8207084112-1@okbizaxis&am=${amt}&tn=Geoid%20Study%20Centre%20(Donation%20For%20Foundation)`;
+  window.open(link, '_blank');
+}
+</script>
+
+</body>
+</html>
