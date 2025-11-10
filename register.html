@@ -1,108 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>GEOID STUDY CENTRE - Admission Portal</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEOID STUDY CENTRE - Admission Portal</title>
 <style>
-body {
-  background: url() repeat;
-  font-family: "Courier New", monospace;
-  color: #000000;
-  margin: 0;
-  padding: 0;
-}
-#main {
-  width: 760px;
-  margin: 20px auto;
-  background-color: #FFFFE0;
-  border: 3px ridge #0000A0;
-}
-#header {
-  background-color: #0000A0;
-  color: yellow;
-  text-align: center;
-  padding: 5px;
-  border-bottom: 3px ridge yellow;
-}
-#header h1 {
-  font-size: 28px;
-  margin: 5px;
-  text-shadow: 1px 1px black;
-}
-marquee {
-  background-color: #FFD700;
-  color: black;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 3px;
-  border-top: 2px ridge #0000A0;
-  border-bottom: 2px ridge #0000A0;
-}
-#menu {
-  background-color: #C0C0C0;
-  text-align: center;
-  padding: 5px;
-  border-bottom: 3px ridge #0000A0;
-}
-#menu a {
-  color: blue;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 10px;
-}
-#menu a:hover {
-  color: red;
-  text-decoration: underline;
-}
-#content {
-  padding: 15px;
-}
-table {
-  width: 100%;
-  border: 2px solid #0000A0;
-  background-color: #FFF8DC;
-}
-td {
-  padding: 6px;
-  font-size: 14px;
-  border: 1px solid #808080;
-}
-input[type="text"], input[type="email"], select, textarea, input[type="file"] {
-  width: 95%;
-  border: 1px inset #0000A0;
-  background-color: #FFFFF0;
-  font-family: "Courier New", monospace;
-}
-input[type="submit"], input[type="reset"] {
-  background-color: #0000A0;
-  color: yellow;
-  border: 2px outset #FFD700;
-  padding: 4px 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
-input[type="submit"]:hover, input[type="reset"]:hover {
-  background-color: #FFD700;
-  color: black;
-}
-#footer {
-  background-color: #0000A0;
-  color: white;
-  text-align: center;
-  font-size: 12px;
-  padding: 6px;
-  border-top: 3px ridge yellow;
-}
-.note {
-  text-align: center;
-  font-size: 12px;
-  color: #000000;
-  margin-top: 4px;
-}
-blink {
-  color: red;
-  font-weight: bold;
-}
+  body {
+    font-family: "Times New Roman", serif;
+    background: linear-gradient(180deg, #f2f2ff, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #000033;
+  }
+
+  #main {
+    max-width: 850px;
+    margin: 20px auto;
+    background: #ffffff;
+    border: 2px solid #0000A0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,128,0.2);
+  }
+
+  #header {
+    background-color: #0000A0;
+    color: #FFD700;
+    text-align: center;
+    padding: 15px 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  #header h1 {
+    margin: 5px 0;
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  #header p {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  marquee {
+    background-color: #FFD700;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  #menu {
+    background-color: #E0E0E0;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #0000A0;
+    border-bottom: 1px solid #0000A0;
+  }
+
+  #menu a {
+    color: #000080;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 12px;
+  }
+
+  #menu a:hover {
+    color: #FF0000;
+    text-decoration: underline;
+  }
+
+  #content {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  td {
+    padding: 8px;
+    border: 1px solid #cccccc;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea,
+  input[type="file"] {
+    width: 96%;
+    padding: 6px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-family: "Times New Roman", serif;
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    background-color: #0000A0;
+    color: #FFD700;
+    border: none;
+    padding: 8px 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: #FFD700;
+    color: #000;
+  }
+
+  #footer {
+    background-color: #0000A0;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .note {
+    text-align: center;
+    font-size: 14px;
+    margin: 10px;
+    color: #000033;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 600px) {
+    #main {
+      width: 95%;
+      margin: 10px auto;
+    }
+
+    #header h1 {
+      font-size: 22px;
+    }
+
+    #content {
+      padding: 15px;
+      font-size: 15px;
+    }
+
+    marquee {
+      font-size: 12px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -110,7 +160,7 @@ blink {
 <div id="main">
   <div id="header">
     <h1>GEOID STUDY CENTRE</h1>
-    <p><blink>*** ADMISSION PORTAL ***</blink></p>
+    <p>ADMISSION PORTAL</p>
   </div>
 
   <marquee behavior="scroll" direction="left">Welcome to GEOID STUDY CENTRE Admission Portal — Apply Now for 2026 Session!</marquee>
@@ -126,8 +176,7 @@ blink {
   <div id="content">
     <center><h3><u>STUDENT ADMISSION FORM</u></h3></center>
 
-    <!-- ✅ Formspree backend -->
-    <p>Open Soon...</p>
+    <p style="text-align:center; color:#006400;">Open Soon...</p>
 
     <center><p><font color="green" size="2"><b>After submission, you will receive a confirmation email.</b></font></p></center>
   </div>
