@@ -1,193 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Portal | GEOID STUDY CENTRE</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* ===== RESET & BASE ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      height: 100vh;
-      background: radial-gradient(circle at 20% 30%, #1e3c72, #2a5298);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-      color: #fff;
-    }
-
-    /* ===== BACKGROUND ANIMATION ===== */
-    .bg-glow {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(30,144,255,0.7), transparent 60%);
-      border-radius: 50%;
-      animation: moveGlow 10s infinite alternate ease-in-out;
-      z-index: 0;
-    }
-
-    @keyframes moveGlow {
-      0% { top: 10%; left: 15%; transform: scale(1); }
-      100% { top: 60%; left: 70%; transform: scale(1.5); }
-    }
-
-    /* ===== PORTAL CONTAINER ===== */
-    .portal-container {
-      position: relative;
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      backdrop-filter: blur(20px);
-      border-radius: 25px;
-      padding: 45px 40px;
-      width: 90%;
-      max-width: 420px;
-      box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.5),
-        inset 0 0 25px rgba(255, 255, 255, 0.1);
-      text-align: center;
-      z-index: 2;
-      transition: all 0.4s ease;
-    }
-
-    .portal-container:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow:
-        0 25px 45px rgba(0,0,0,0.6),
-        inset 0 0 40px rgba(255,255,255,0.2);
-    }
-
-    /* ===== TITLE ===== */
-    .portal-container h2 {
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 25px;
-      letter-spacing: 1px;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.4);
-      animation: glowText 3s infinite alternate;
-    }
-
-    @keyframes glowText {
-      0% { text-shadow: 0 0 8px #00c6ff; }
-      100% { text-shadow: 0 0 15px #0072ff; }
-    }
-
-    /* ===== FORM ===== */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input {
-      padding: 13px 16px;
-      border-radius: 12px;
-      border: none;
-      font-size: 1rem;
-      background: rgba(255,255,255,0.9);
-      color: #333;
-      box-shadow:
-        inset 2px 2px 6px rgba(0,0,0,0.15),
-        inset -2px -2px 6px rgba(255,255,255,0.8);
-      outline: none;
-      transition: 0.3s;
-    }
-
-    input:focus {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px rgba(30,144,255,0.6);
-    }
-
-    /* ===== BUTTON ===== */
-    button {
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: #fff;
-      border: none;
-      padding: 14px;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 5px 20px rgba(0, 114, 255, 0.5);
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: linear-gradient(135deg, #0072ff, #00c6ff);
-      transform: scale(1.05);
-      box-shadow: 0 10px 30px rgba(0,114,255,0.7);
-    }
-
-    /* ===== FOOTER ===== */
-    .footer-text {
-      margin-top: 20px;
-      font-size: 0.85rem;
-      color: #eaeaea;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    }
-
-    .footer-text a {
-      color: #00c6ff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .footer-text a:hover {
-      color: #fff;
-      text-shadow: 0 0 8px #00c6ff;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 480px) {
-      .portal-container {
-        padding: 30px 25px;
-      }
-
-      .portal-container h2 {
-        font-size: 1.5rem;
-      }
-
-      button {
-        font-size: 1rem;
-        padding: 12px;
-      }
-    }
-  </style>
+<title>GEOID STUDY CENTRE - Admission Portal</title>
+<meta charset="UTF-8">
+<style>
+body {
+  background: url() repeat;
+  font-family: "Courier New", monospace;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+#main {
+  width: 760px;
+  margin: 20px auto;
+  background-color: #FFFFE0;
+  border: 3px ridge #0000A0;
+}
+#header {
+  background-color: #0000A0;
+  color: yellow;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 3px ridge yellow;
+}
+#header h1 {
+  font-size: 28px;
+  margin: 5px;
+  text-shadow: 1px 1px black;
+}
+marquee {
+  background-color: #FFD700;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 3px;
+  border-top: 2px ridge #0000A0;
+  border-bottom: 2px ridge #0000A0;
+}
+#menu {
+  background-color: #C0C0C0;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 3px ridge #0000A0;
+}
+#menu a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+#menu a:hover {
+  color: red;
+  text-decoration: underline;
+}
+#content {
+  padding: 15px;
+}
+table {
+  width: 100%;
+  border: 2px solid #0000A0;
+  background-color: #FFF8DC;
+}
+td {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #808080;
+}
+input[type="text"], input[type="email"], select, textarea, input[type="file"] {
+  width: 95%;
+  border: 1px inset #0000A0;
+  background-color: #FFFFF0;
+  font-family: "Courier New", monospace;
+}
+input[type="submit"], input[type="reset"] {
+  background-color: #0000A0;
+  color: yellow;
+  border: 2px outset #FFD700;
+  padding: 4px 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+input[type="submit"]:hover, input[type="reset"]:hover {
+  background-color: #FFD700;
+  color: black;
+}
+#footer {
+  background-color: #0000A0;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 6px;
+  border-top: 3px ridge yellow;
+}
+.note {
+  text-align: center;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 4px;
+}
+blink {
+  color: red;
+  font-weight: bold;
+}
+</style>
 </head>
 <body>
 
-  <div class="bg-glow"></div>
-
-  <div class="portal-container">
-    <h2>🧭 GEOID STUDY CENTRE<br>Student Registration</h2>
-
-    <form action="https://formspree.io/f/xdkpovbe" method="POST">
-      <input type="text" name="Name" placeholder="Enter your Name" required />
-      <input type="email" name="Email" placeholder="Enter your Email" required />
-      <input type="tel" name="Phone" placeholder="Enter your Phone Number" required />
-      <input type="text" name="Address1" placeholder="Enter your City" required />
-      <input type="text" name="District" placeholder="Enter your District Name" required />
-      <input type="text" name="School" placeholder="Enter your School Name" required />
-     <input type="text" name="Class" placeholder="Enter your New Class" required /> 
-      <button type="submit">Register Now</button>
-    </form>
-
-    <div class="footer-text">
-      © 2025 GEOID Study Centre | Powered by <strong>Subhadip Satpati</strong> <br>
-      <a href="index.html">🏠 Home</a>
-    </div>
+<div id="main">
+  <div id="header">
+    <h1>GEOID STUDY CENTRE</h1>
+    <p><blink>*** ADMISSION PORTAL ***</blink></p>
   </div>
+
+  <marquee behavior="scroll" direction="left">Welcome to GEOID STUDY CENTRE Admission Portal — Apply Now for 2026 Session!</marquee>
+
+  <div id="menu">
+    <a href="#">Home</a> |
+    <a href="#">Courses</a> |
+    <a href="#">Apply</a> |
+    <a href="#">Notice</a> |
+    <a href="#">Contact</a>
+  </div>
+
+  <div id="content">
+    <center><h3><u>STUDENT ADMISSION FORM</u></h3></center>
+
+    <!-- ✅ Formspree backend -->
+    <p>Open Soon...</p>
+
+    <center><p><font color="green" size="2"><b>After submission, you will receive a confirmation email.</b></font></p></center>
+  </div>
+
+  <div id="footer">
+    &copy; 2025 GEOID STUDY CENTRE | All Rights Reserved
+  </div>
+</div>
+
+<div class="note">
+  <p><b>Build by Subhadip Satpati</b></p>
+</div>
 
 </body>
 </html>
