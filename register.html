@@ -7,72 +7,65 @@
 <style>
   body {
     font-family: "Times New Roman", serif;
-    background: linear-gradient(180deg, #f2f2ff, #ffffff);
+    background-color: #f5f5dc;
+    color: #000033;
     margin: 0;
     padding: 0;
-    color: #000033;
   }
 
   #main {
     max-width: 850px;
     margin: 20px auto;
-    background: #ffffff;
-    border: 2px solid #0000A0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,128,0.2);
+    background-color: #ffffff;
+    border: 2px solid #000080;
   }
 
   #header {
-    background-color: #0000A0;
-    color: #FFD700;
+    background-color: #000080;
+    color: #ffff00;
     text-align: center;
-    padding: 15px 5px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    padding: 10px;
   }
 
   #header h1 {
-    margin: 5px 0;
     font-size: 26px;
-    letter-spacing: 1px;
+    margin: 5px 0;
   }
 
   #header p {
-    font-weight: bold;
     font-size: 16px;
+    margin: 0;
   }
 
   marquee {
-    background-color: #FFD700;
+    background-color: #ffff99;
     color: #000;
     font-weight: bold;
-    font-size: 14px;
     padding: 5px;
   }
 
   #menu {
-    background-color: #E0E0E0;
+    background-color: #dcdcdc;
     text-align: center;
-    padding: 10px;
-    border-top: 1px solid #0000A0;
-    border-bottom: 1px solid #0000A0;
+    padding: 8px;
+    border-top: 1px solid #000080;
+    border-bottom: 1px solid #000080;
   }
 
   #menu a {
     color: #000080;
     text-decoration: none;
     font-weight: bold;
-    margin: 0 12px;
+    margin: 0 10px;
   }
 
   #menu a:hover {
-    color: #FF0000;
+    color: #ff0000;
     text-decoration: underline;
   }
 
   #content {
     padding: 20px;
-    font-size: 16px;
   }
 
   table {
@@ -82,58 +75,52 @@
   }
 
   td {
-    padding: 8px;
-    border: 1px solid #cccccc;
+    padding: 6px;
   }
 
   input[type="text"],
   input[type="email"],
-  select,
+  input[type="tel"],
   textarea,
+  select,
   input[type="file"] {
     width: 96%;
-    padding: 6px;
-    border: 1px solid #999;
-    border-radius: 4px;
+    padding: 5px;
     font-family: "Times New Roman", serif;
+    border: 1px solid #999;
   }
 
   input[type="submit"],
   input[type="reset"] {
-    background-color: #0000A0;
-    color: #FFD700;
+    background-color: #000080;
+    color: #ffff00;
     border: none;
-    padding: 8px 18px;
+    padding: 7px 15px;
     font-weight: bold;
-    border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
   }
 
   input[type="submit"]:hover,
   input[type="reset"]:hover {
-    background-color: #FFD700;
+    background-color: #ffff00;
     color: #000;
   }
 
   #footer {
-    background-color: #0000A0;
+    background-color: #000080;
     color: white;
     text-align: center;
     font-size: 14px;
     padding: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
   }
 
   .note {
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     margin: 10px;
-    color: #000033;
   }
 
-  /* Mobile Responsive */
+  /* Mobile */
   @media (max-width: 600px) {
     #main {
       width: 95%;
@@ -146,11 +133,10 @@
 
     #content {
       padding: 15px;
-      font-size: 15px;
     }
 
-    marquee {
-      font-size: 12px;
+    input, select, textarea {
+      font-size: 14px;
     }
   }
 </style>
@@ -175,7 +161,66 @@
   <div id="content">
     <center><h3><u>STUDENT ADMISSION FORM</u></h3></center>
 
-    <p style="text-align:center; color:#006400;">Open Soon...</p>
+    <form action="https://formspree.io/f/xdkpovbe" method="POST" enctype="multipart/form-data">
+      <table>
+        <tr>
+          <td><b>Full Name:</b></td>
+          <td><input type="text" name="Name" required></td>
+        </tr>
+        <tr>
+          <td><b>Email:</b></td>
+          <td><input type="email" name="Email" required></td>
+        </tr>
+        <tr>
+          <td><b>Phone Number:</b></td>
+          <td><input type="tel" name="Phone" pattern="[0-9]{10}" maxlength="10" required></td>
+        </tr>
+        <tr>
+          <td><b>Address:</b></td>
+          <td><textarea name="Address" rows="2" required></textarea></td>
+        </tr>
+        <tr>
+          <td><b>School Name:</b></td>
+          <td><input type="text" name="School" required></td>
+        </tr>
+        <tr>
+          <td><b>Apply For:</b></td>
+          <td>
+            <select name="Class" required>
+              <option value="">--Select Class--</option>
+              <option>Class 6 (Geography)</option>
+              <option>Class 7 (Geography)</option>
+              <option>Class 8 (Geography)</option>
+              <option>Class 9 (Geography)</option>
+              <option>Class 10 (Geography)</option>
+              <option>Class 11 (Geography)</option>
+              <option>Class 12 (Geography)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Upload Photo:</b></td>
+          <td><input type="file" name="Photo" accept="image/*" required></td>
+        </tr>
+        <tr>
+          <td><b>Upload Signature:</b></td>
+          <td><input type="file" name="Signature" accept="image/*" required></td>
+        </tr>
+        <tr>
+          <td><b>Captcha:</b></td>
+          <td>
+            <input type="text" name="Captcha" placeholder="Enter Captcha" required>
+            <p style="font-size:13px; color:#555;">Type "GEOID2026" to verify</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Submit Form">
+            <input type="reset" value="Reset">
+          </td>
+        </tr>
+      </table>
+    </form>
 
     <center><p><font color="green" size="2"><b>After submission, you will receive a confirmation email.</b></font></p></center>
   </div>
@@ -191,4 +236,3 @@
 
 </body>
 </html>
-
