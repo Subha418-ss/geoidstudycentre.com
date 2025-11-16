@@ -82,12 +82,12 @@
   input[type="email"],
   input[type="tel"],
   textarea,
-  select,
-  input[type="file"] {
+  select {
     width: 96%;
     padding: 5px;
     font-family: "Times New Roman", serif;
     border: 1px solid #999;
+    background-color: #f9f9f9;
   }
 
   input[type="submit"],
@@ -120,7 +120,6 @@
     margin: 10px;
   }
 
-  /* Mobile */
   @media (max-width: 600px) {
     #main {
       width: 95%;
@@ -149,7 +148,9 @@
     <p>ADMISSION PORTAL</p>
   </div>
 
-  <marquee behavior="scroll" direction="left">Welcome to GEOID STUDY CENTRE Admission Portal — Apply Now for 2026 Session!</marquee>
+  <marquee behavior="scroll" direction="left">
+    Welcome to GEOID STUDY CENTRE Admission Portal — Apply Now for 2026 Session!
+  </marquee>
 
   <div id="menu">
     <a href="index.html">Home</a> |
@@ -158,10 +159,21 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <div id="content">
-    <center><h3><u>STUDENT ADMISSION FORM - 2026</u></h3></center>
-    <p>Open Soon</p>
-    <center><p><font color="green" size="2"><b>After submission, you will receive a confirmation email.</b></font></p></center>
+  
+
+    <hr><br>
+
+    <!-- FORM 2: Formester Embed -->
+    <script src="https://alatvsxv.formester.com/widget/standard.js" type="module"></script>
+
+    <formester-standard-form
+      set-auto-height="true"
+      height="100%"
+      width="100%"
+      id="4FtItUYtm"
+      url="https://alatvsxv.formester.com/f/4FtItUYtm">
+    </formester-standard-form>
+
   </div>
 
   <div id="footer">
@@ -173,6 +185,29 @@
   <p><b>Build by Subhadip Satpati</b></p>
 </div>
 
+<script>
+function generateCaptcha() {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let code = "";
+  for (let i = 0; i < 5; i++) {
+    code += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  document.getElementById("captcha").value = code;
+}
+
+function validateCaptcha() {
+  const c1 = document.getElementById("captcha").value.trim();
+  const c2 = document.getElementById("userCaptcha").value.trim();
+  if (c1 !== c2) {
+    alert("Captcha does not match! Please try again.");
+    generateCaptcha();
+    return false;
+  }
+  return true;
+}
+
+window.onload = generateCaptcha;
+</script>
+
 </body>
 </html>
-
