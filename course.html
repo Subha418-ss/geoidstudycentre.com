@@ -1,286 +1,241 @@
-
-
-
 <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Full Page Marksheet</title>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1">
-    <style>
-            @charset "UTF-8";
-        /* CSS Document */
+<style>
+  body {
+    font-family: "Times New Roman", serif;
+    background: #f6f0df;
+    padding: 10px;
+    margin: 0;
+  }
 
-        body {
-            width:auto;
-        font-family: 'Raleway', sans-serif;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
-background: rgb(255,255,255); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
 
-*/
-background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, 
+  .sheet-container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+    border: 10px double #3a2f1b;
+    background: #fffdf3;
+    position: relative;
+    overflow: hidden;
+  }
 
-Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-        }
+  .watermark {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.05);
+    text-align: center;
+    pointer-events: none;
+  }
 
-        p {
-	        color:#CCC;
-        }
+  .watermark img {
+    width: 200px;
+    opacity: 0.07;
+    display: block;
+    margin: 0 auto;
+  }
 
-        .spacing {
-	        padding-top:6px;
-	        padding-bottom:7px;
-        }
-        .middlePage {
-            position: absolute;
-            top:0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
+  .header {
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-        .logo {
-	        
-            text-align:center;
-        }.icon-bar {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+  .header img {
+    width: 70px;
+    height: 70px;
+  }
 
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 9px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 12px;
-}
+  .header h1 {
+    font-size: 26px;
+    margin: 5px 0;
+  }
 
-.icon-bar a:hover {
-  background-color: #ff6a00;
-  color: black;
-}
+  .header p {
+    font-size: 16px;
+    margin: 3px 0;
+  }
 
-.facebook {
-  background: #3B5998;
-  color: white;
-}
+  .details-box {
+    border: 2px solid #000;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+  }
 
-.twitter {
-  background: #55ACEE;
-  color: white;
-}
+  .details-box table {
+    width: 100%;
+  }
 
-.google {
-  background: #dd4b39;
-  color: white;
-}
+  .details-box td {
+    padding: 5px;
+  }
 
-.linkedin {
-  background: #007bb5;
-  color: white;
-}
+  /* SCROLL TEXT */
+  .scroll-text {
+    margin: 15px 0;
+    padding: 8px;
+    background: #e2d3ab;
+    border: 1px solid #000;
+    font-weight: bold;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
-.youtube {
-  background: #bb0000;
-  color: white;
-}
+  .scroll-text span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 12s linear infinite;
+  }
 
+  @keyframes scroll-left {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
 
-        .style1
-        {
-            color: #FF3300;
-        }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-top: 10px;
+  }
 
+  th {
+    background: #e2d3ab;
+    padding: 8px;
+    border: 1px solid #000;
+  }
 
-    </style>
-    <link id="bootstrap" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-   
+  td {
+    border: 1px solid #000;
+    padding: 8px;
+    height: 32px;
+  }
 
-    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
-<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" media="screen" /><title>
+  .sign-area {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 16px;
+  }
 
-</title></head>
-<body style="background-image:url(Images/AIMES_LOGO.png); background-repeat: repeat-x repeat-y;">
-    <div class="icon-bar">
-  <a href="#" class="facebook">Fees Payment</a> 
-  <a href="#" class="twitter">Learning HUB</a> 
-  <a href="#" class="google">Attendance</a> 
-  <a href="#" class="linkedin">Feedback</a>
-  <a href="#" class="youtube">Support</a> 
-  <a href="#" class="twitter">Exam</a>
-  <a href="notice.html" class="facebook">Notice</a> 
-  <a href="#" class="linkedin">Library</a> 
-</div>
+  .sign-box {
+    width: 32%;
+    min-width: 150px;
+    margin-top: 20px;
+    text-align: center;
+  }
 
-   <div id="MyPopup" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    &times;</button>
-                <h4 class="modal-title">
-                </h4>
-            </div>
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">
-                    Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-    <form method="post" action="./login.aspx" id="Form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/Jv4W0kr45h7mc4AS8ZsskM4TjEkHyXPNdIYFrCGmS7kXvLtjw3Vtj0WBYz2yvg5KhizKEd5XSzKDNdiD2WavfqISFqChV8z/1Xirk8g5kxSbaH5GhnOmlt/A5YqFZvZwILIRNFTt6V1JcJ9z+moq4G/H6LqYyi031r+yrJvVf9KJnGQUnrsr2BMzpJ05d93BaYJ0/mQBu3b2Y9E7sMh7kL/8YSTanMUDboRNofmVBf6Tl//Ni8F6qpH8Onv3Nwur94Snv6xlUxZjv3LVb2LageYhdUik6fzduBA38ncRl4Z1y7G9hXLYdSbfOtZPVMBYK96Qjmi6j2un+j3AqChCoLKwl96ZjXwdQhc2WxLv1i4ygMLoucq1ut50OmWPNP6oEECdojtPac43ITWFBgnRQwbl/nv1DTrZWtW20/k+KQAtlmDzG5pc1PgIgcwisw0UVn3EUAKGlwZgEslJCp1qTvKyUiU2pFjcC2eqEyBBZZixxLbJpoCbg7j/ovW0jjFgE9Lp6IuolD+sl6YXRxmXrzBwn+xewsOExDh+A/pcEVT0nmf9+2a/qWRJi8oMV9In6rpHLfbopV8bIvsA7s0FSEC8jWPojAofBKr7g4mRIFg5PmQm/hC7aKvhLNpN7SuxzDRx8p5aw1JuWHzIFtuaEHfbDXAqsJ8tFVpTQHF8Lrqks5uoaNZZ8jsLN7H0LNp0uxqKe8sjMe8/qpF457Wu+Uj7P9ou68ukPStTWneHOdKyYDa9BfLnPGMY3iKVNNgljTiLQOsxrQLCLt0spDbt6gJMagOXcAS0vav4cWF5p1h4K8Dm3I1ne2eHjcqQSQGMbScVdEApd5HPX5VOUKbR6RjfcaA5VNAsL8KC5amuVecD7im65JDZVOj2ct1pfyXvk8G38oYZgG1fN5kr9i9NZewyJz30olgGRUmzAl3ZX69+bFSh8nzR7T2SXqI3EqMkGnmrIm6/YJZv9mD2Rn+qGWxKlYhJOg4ygwYBbVW5iT8GpKIjU0+m3Q6EkPBeEmnUjat0wkLoKCgnq/yFd8bupWIPNL9bf1vspVU2Ao/kCdUSdXg2pU55sAa/akcbgypmWPt45voBIX3qOcMa8KT/3On7AvyF2sSoL405sM5eiLkNwn/wNtsHaFyVUQLJ+l0LEoiSdCXrxMpNXlm1g5VIT1XwP4oBanWge2LgSs1b3y1inZCuRlzStDxOfq9QloNcD43ClYuq65mK7KwzU7NWQ15ZzhtjDMiobbLcaCKgvmNJn5yuCpZC3X9iRtOyMG8SHHyh2jZOR5F/DwIJiRaOM0uB3Py/Az4EVSJsZ+zC+B2zn8xlrB8xfcrLllmE/SrBOwX4BZbK0axFU9sloefiGRZdUAc+3KkZOkUqMPbvv0IoiRcgVzcf3UJShBIHltEuzr2IScGeqXFSyj0yObzwsvpPj2LCgqop7D79736XYOZO284DlzhmvcHHxHCDQ+jCqI0pdJyGwXK8DGy1sxUOktYys24zaWF9EFdWVWV/mvvC7P2598d5/4GI0rJO520g8klDvnVZbeb6NA1o8ujKg==" />
-</div>
+  .print-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    background: #e5d8b8;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
-<div class="aspNetHidden">
+  @media(max-width: 600px) {
+    .header h1 { font-size: 20px; }
+    .header p { font-size: 14px; }
+    table, th, td { font-size: 14px; }
+    .details-box { font-size: 14px; }
+    .watermark { font-size: 30px; }
+    .sign-area { flex-direction: column; align-items: center; }
+    .sign-box { width: 100%; margin-top: 20px; }
+  }
+</style>
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="01F89586" />
-	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="bR3UDhDFatNcsTNhmMPF29K4aNtbPtvpRv1Vk3YmGn67tvQ9LcV62eRz9jUnEvvFFFYkHtz5LA2wNzjaZHS0MHLoW//rHHPF+SP7lopqVmWoB09bJhqJ/jzbQl6brHlZd2YLX2He1LbD5unTWAJzgOVOGoEn95i7M+/h7Y3/EMD21Nj4LD2bt156E8mG0v4Jsrt4bnDer6KJGRts3AXyF2UkO6ZlSFaQ9y+dNR4nNHYTQpzeGuhIp7dciwhXUf9y6lAF6rjg6Y1BGRtSuYdI1EhS5QKvIfgKZLUNJjWQlw4vElisg/72vlTvCAhQNCQCiz5+HvhOeCbq1WaeSzDbstrndnJBX8+tQqS6oAe9MnaT9TO3vAnrSu6NF0keaKj7W8Tn8CJyYMkh5znxtZeOega3ebzvu+wHQ8/xz3yxwHTj/TYzK0K2i81cOToIQNvE7TmHKIsbs5S5uryGB4yJK+Wl7bzlCnFxgtfKYjbf9mdZ9KAo2Qm9E6Uyjb+Qgla5WTKv4htBHDwFjaqHsi9NExEuIy9Xf/S4+pkiK1hJk0sa+Ur7OUshXazQmJf8Vc+qT9+zFTNG3SDwVGFu8LwZLihXaDRiTja6ZCGoXewqr8h0K3JGEf306rCQO475LRzcy+xI07JNwfgz//uOFeuADXthdazxzKB9E/Ke0GT71rzTP7XR6kwVpAc9tQzbCiwLH6A0eZHjssLJICIU+A6aF4ZmNYZcr0fVmotZh2Qx+cfyyC2GacWyW5Jfv1LHE88cWGa1rARQ2U2bw0kk9AU2/Y49f3u9iKk8T0nQmpfUCJD50R46GLOnzh5MLhQaWH8fRAWLc00JaiHF0wrgHKV564z3MeokbOgbAlXlia0nmUpmhWce9IpjRRrCRvsxoTwni1CX9LqtJUVaTUIa3GTVcx9BVhLVLxB1ntDMlzVwqVtyIcsseP9D1Ml+p4QoIa6VvWpSAXbhtdz6ibVj52u9AQ+USrRUFtXr1KGeSuswddzRRkJwfT8rnNNTUeRJKrGIOpe1/fCo2RH28XxR14ePA0cqicnL9llH4kPCu2bN/pjtiE8pFDDZlw6Xm813QGPiXiNzWWszlG5KDRiD1Y2e/UaPwijhuJXnAnyEFdcrKguYCHzVZ75Mt7ZsIqpiyTJR0H4GclBYO1TKoI0aVIPMitIvxPDABKvJbaHBJBItIrB1tK4hd8X68dq3T4QTYFO+mmQSAzxS38kflQn+DWWFm6sXtf7n7ouPy22LUqCMWApZuOiEc/FGGb0/6yRp666IHsHZNFkaqPfhZdFsa4t7lr89D2sX8Jg6Pc8edm+9aEvPsylxud5fjGIwrsWez3Zt" />
-</div>
+</head>
+<body>
 
-        <div class="container">
-<div class="page-header">
-  <h2 class="logo">
-      </h2>
- <h2>GEOID STUDY CENTRE</h2>
-</div>
+<div class="sheet-container">
 
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title">Student Protal</h3>
-  </div>
-  <div class="panel-body">
-
-  <div class="row">
-<div class="col-md-8">
-    <div class="panel panel-success">
-    <div class="panel-heading">
-    <h3 class="panel-title">Notice</h3>
-  </div>
-  <div class="panel-body">This page is now under construction 🛠️
-  
-  <div class="row">
-      <div>
-
-</div>
-      </div>
-
-      </div>
-    </div>
-</div>
-
-
-<div class="col-md-4" >
-    <div class="panel panel-danger">
-    <div class="panel-heading">
-    <h3 class="panel-title">Login</h3>
-  </div>
-  <div class="panel-body">
-      <div class="row">
- <input name="username" id="username" placeholder="Enter Student ID" name="username" class="form-control input-sm" type="text" />
-  <div class="spacing"><input type="checkbox" name="checkboxes" id="checkboxes-0" value="1"><small> Remember me</small></div>
-    <input name="pass" id="pass" class="form-control input-sm" type="password" name="pass" placeholder="Enter Password (ddmmYYYY)" />
-  <div class="spacing"> <span id="errormsg" style="font-weight:bold;"></span><a href="forgotpwd.aspx"><small> Forgot Password?
-
-</small></a>&nbsp;<span class="style1"><strong>HELPDESK NO:      <p></p>+91 8207084112 </strong></span><br/></div>
-  <input type="submit" name="Btnlogin" value="Sign In" id="Btnlogin" class="btn btn-info btn-sm pull-right" />
-</div>
-
-      <b>Enter your Student ID and Password & Login</b><br/>
-<span style="text-decoration: underline;
-            color: #FF0000;"><strong>*Default password will be your Date of Birth (ddmmYYYY)</strong></span><br />
-      If you do not remember your password click on "Forgot Password" option
+  <!-- WATERMARK -->
+  <div class="watermark">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAABxLwYlAAAABHNCSVQICAgIfAhkiAAAAGJJREFUeJztwTEBAAAAwqD1T20JT6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwG8BFVQAAe8G4cUAAAAASUVORK5CYII=">
+    GEOID STUDY CENTREE
   </div>
 
-      </div>
-    </div>
-
-
-
-      
-      <div class="col-md-12" >
-    <div class="panel panel-primary">
-    <div class="panel-heading">
-    <h3 class="panel-title">Click to Find your Student ID</h3>
+  <!-- HEADER -->
+  <div class="header">
+    <h1>GEOID STUDY CENTRE</h1>
+    <p>City : Contai | Post: Contai | District: Purba Medinipur</p>
+    <p><b>Examination Result Sheet</b></p>
   </div>
-  <div class="panel-body">
-      <div class="row">
- <div id="dtls">
-                        <h3 align="center" style="text-transform: uppercase; color: #003366">Find Details <hr /></h3>
-                        <table width="100%">
-                            <tr>
-                                <td width="33%" align="center">Select Course</td>
-                                <td width="33%" align="center">
-                                    <select name="dtsub" id="dtsub" class="form-control">
-	<option value="0">All Courses</option>
-	<option value="26"></option>
-	<option value="52"></option>
-	<option value="25"></option>
-	<option value="28"></option>
 
-</select></td>
-                                <td width="33%" align="center"></td>
-                            </tr>
-                             <tr>
-                                <td width="33%" align="center">Enter Name</td>
-                                <td width="33%" align="center">
-                                    <input name="txtname" type="text" id="txtname" class="form-control" style="background-color:#FFD9B3;" /></td>
-                                <td width="63%" align="center">
-                                    <input type="submit" name="Button1" value="SHOW" id="Button1" class="btn-dark" /></td>
-                            </tr>
-                             <tr>
-                                <td align="center" colspan="3" style="width: 66%">
-                                    <div>
+  <!-- DETAILS -->
+  <div class="details-box">
+    <table>
+      <tr>
+        <td><b>Exam Name:</b> Madhyamik Test Exam</td>
+        <td><b>Session:</b> 2025-26</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- SCROLL TEXT ADDED HERE -->
+  <div class="scroll-text">
+    <span>★ Official Marksheet of GEOID STUDY CENTRE • Contai • Purba Medinipur ★</span>
+  </div>
+  <p>Data Will be add Soon..</p>
+
+  <!-- RESULT TABLE -->
+  <table>
+    <tr>
+      <th>Student Name</th>
+      <th>School Name</th>
+      <th>Result</th>
+      <th>Marks</th>
+      <th>Grade</th>
+    </tr>
+
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <!-- SIGNATURES -->
+<div class="sign-area">
+
+  <div class="sign-box">
+    <img src="https://yearning-blush-3ul9ny9nxz.edgeone.app/Applicants-Signature%20(1).jpeg" alt="Student Signature" style="width:120px;height:auto;"><br>
+    Developer Signature
+  </div>
+
+  <div class="sign-box">
+    <img src="" alt="Sukdeb Das" style="width:120px;height:auto;"><br>
+    Owner Signature
+  </div>
+
+  <div class="sign-box">
+    <img src="https://financial-bronze-6idjt9ebcc.edgeone.app/STAMP-removebg-preview%20(1).png" alt="Office Seal" style="width:120px;height:auto;"><br>
+    Office Seal
+  </div>
 
 </div>
-                                 </td>
-                            </tr>
-                             <tr>
-                                <td width="33%" align="center"></td>
-                                <td width="33%" align="center"></td>
-                                <td width="33%" align="center"></td>
-                            </tr>
-                             <tr>
-                                <td width="33%" align="center">
-                                    <a id="HyperLink1" href="OnlineFeesStudentList.aspx" target="_blank">Online Payment Schedule</a>
-                                 </td>
-                                <td width="33%" align="center">
 
-                                     <a id="HyperLink2" href="../studentregistrationrequest.aspx" target="_blank">New Student Registration Request</a>
-                                </td>
-                                <td width="33%" align="center"></td>
-                            </tr>
 
-                        </table>
-                    </div>
-</div></div>
+  <center>
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </center>
 
-      </div>
-    </div>
-</div>
 </div>
 
- </div>
-
-              <script type="text/javascript">
-                  function ShowPopup(title, body) {
-                      $("#MyPopup .modal-title").html(title);
-                      $("#MyPopup .modal-body").html(body);
-                      $("#MyPopup").modal("show");
-                  }
-</script>      
-    </form></body></html>
+</body>
+</html>
