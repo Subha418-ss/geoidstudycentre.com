@@ -65,7 +65,7 @@
 
   /* ABOUT */
   .about p{
-    max-width:900px;margin:0 auto;font-size:1.2rem;line-height:1.8;color:#444;
+    max-width:900px;margin:0 auto;font-size:1.2rem;font-family:Noto Serif Bengali;line-height:1.8;color:#444;
     background:rgba(255,255,255,0.15);padding:30px;border-radius:20px;
   }
 
@@ -186,6 +186,116 @@
     cursor: pointer;
     box-shadow: 0 0 10px #000;
   }
+
+  /* ---------- MOBILE RESPONSIVE FIX ---------- */
+
+@media (max-width: 920px) {
+  header {
+    padding: 15px 25px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .courses {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-container {
+    gap: 12px;
+  }
+
+  .gallery-item {
+    min-width: 220px;
+    height: 160px;
+  }
+
+  .qp-container {
+    padding: 18px;
+  }
+
+  .weather-box, .map-box {
+    min-height: 200px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 220px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  header .logo-area img.logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .hero {
+    padding: 120px 15px;
+  }
+
+  #popup-overlay {
+    width: 100%;
+    height: 100%;
+  }
+
+  #popup-box img {
+    width: 90%;
+  }
+
+  #close-popup {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .contact-info {
+    padding: 20px;
+  }
+
+  footer .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 18px;
+    right: 18px;
+  }
+}
+
 
 </style>
 </head>
