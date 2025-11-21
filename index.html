@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GEOID STUDY CENTRE | Learn. Grow. Excel.</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
   *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
   body{background:linear-gradient(135deg,#e0eafc,#cfdef3);color:#222;overflow-x:hidden;}
@@ -35,120 +36,69 @@
   }
   nav ul li a:hover::after{width:100%;}
 
-  /* HAMBURGER MENU */
+  /* HAMBURGER */
   .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;}
   .menu-toggle div{width:28px;height:3px;background:#fff;border-radius:2px;}
   nav.active ul{display:flex;flex-direction:column;align-items:center;gap:15px;padding:20px 0;}
-  nav.active{background:rgba(10,61,98,0.95);position:absolute;top:70px;left:0;width:100%;border-top:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 15px rgba(0,0,0,0.3);}
+  nav.active{background:rgba(10,61,98,0.95);position:absolute;top:70px;left:0;width:100%;border-top:1px solid rgba(255,255,255,0.2);}
 
-  /* HERO SECTION */
+  /* HERO */
   .hero{
     background:linear-gradient(rgba(10,61,98,0.7),rgba(0,0,0,0.7)),url('https://confident-lavender-napbmekmcx.edgeone.app/banner.png') center/cover no-repeat;
-    color:white;text-align:center;padding:160px 20px;position:relative;overflow:hidden;
+    color:white;text-align:center;padding:160px 20px;position:relative;
   }
-  .hero h2{font-size:2.8rem;margin-bottom:15px;text-shadow:2px 2px 12px rgba(0,0,0,0.5);animation:floatText 6s ease-in-out infinite;}
+  .hero h2{font-size:2.8rem;margin-bottom:15px;animation:floatText 6s ease-in-out infinite;}
   .hero p{font-size:1.2rem;margin-bottom:30px;opacity:0.9;}
   .hero a{
     background:linear-gradient(135deg,#ffd32a,#ffb703);
-    color:#000;padding:14px 35px;border-radius:30px;font-weight:600;text-decoration:none;
-    box-shadow:0 8px 25px rgba(255,211,42,0.4);transition:all 0.3s ease;
+    color:#000;padding:14px 35px;border-radius:30px;text-decoration:none;
+    box-shadow:0 8px 25px rgba(255,211,42,0.4);transition:0.3s;
   }
-  .hero a:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(255,211,42,0.6);}
+  .hero a:hover{transform:translateY(-6px);}
+
   @keyframes floatText{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 
   section{padding:80px 50px;text-align:center;}
   section h2{
-    color:#c33a14;font-size:2rem;font-family:Noto Serif Bengali,'Times New Roman',Times,serif;margin-bottom:25px;
-    text-shadow:1px 1px 3px rgba(0,0,0,0.15);
+    color:#c33a14;font-size:2rem;font-family:Noto Serif Bengali;margin-bottom:25px;
   }
-  section h2::after{content:"";width:80px;height:4px;background:linear-gradient(90deg,#01e1ff,#00b4d8);display:block;margin:10px auto 0;border-radius:2px;box-shadow:0 2px 6px rgba(0,180,216,0.4);}
 
+  /* ABOUT */
   .about p{
-    max-width:900px;margin:0 auto;font-size:1.2rem;font-family:Noto Serif Bengali;line-height:1.8;color:#444;
-    background:rgba(255,255,255,0.15);backdrop-filter:blur(12px);padding:30px;border-radius:20px;
-    box-shadow:10px 10px 20px rgba(0,0,0,0.05),-10px -10px 20px rgba(255,255,255,0.3);
+    max-width:900px;margin:0 auto;font-size:1.2rem;line-height:1.8;color:#444;
+    background:rgba(255,255,255,0.15);padding:30px;border-radius:20px;
   }
 
+  /* COURSES */
   .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:40px;margin-top:40px;}
   .course-card{
     background:rgba(255,255,255,0.2);backdrop-filter:blur(15px);border-radius:20px;padding:30px;
-    transition:all 0.3s ease;box-shadow:10px 10px 20px rgba(0,0,0,0.08),-10px -10px 20px rgba(255,255,255,0.3);
+    transition:0.3s;box-shadow:10px 10px 20px rgba(0,0,0,0.08);
   }
-  .course-card:hover{transform:translateY(-10px);box-shadow:0 15px 35px rgba(0,0,0,0.2),0 0 30px rgba(0,180,216,0.2);}
-  .course-card h3{color:#0a3d62;margin-bottom:12px;font-size:1.3rem;}
-  .course-card p{color:#555;font-size:0.95rem;}
+  .course-card:hover{transform:translateY(-10px);}
 
-  /* Question Paper Section */
-#question-paper {
-  padding: 80px 50px;
-  text-align: center;
-}
-
-.new-badge {
-  background: linear-gradient(45deg, red, green, blue);
-  color: #fff;
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  animation: rgbBlink 1s infinite;
-}
-
-@keyframes rgbBlink {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
-}
-
-.qp-container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 25px;
-  background: rgba(255,255,255,0.25);
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
-  box-shadow: 10px 10px 25px rgba(0,0,0,0.08);
-}
-
-.qp-list {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.qp-item {
-  background: rgba(255,255,255,0.35);
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #0a3d62;
-  font-weight: 600;
-  transition: 0.3s;
-  display: inline-block;
-}
-
-.qp-item:hover {
-  background: #0a3d62;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-/* GALLERY */
-  .gallery-container {
-    display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px;
-    scrollbar-width:thin;scrollbar-color:#0a3d62 #e0e0e0;opacity:0;transform:translateY(40px);
-    transition:opacity 1s ease,transform 1s ease;
+  /* QUESTION PAPER */
+  .qp-container{
+    max-width:800px;margin:20px auto;padding:25px;background:rgba(255,255,255,0.25);
+    border-radius:20px;backdrop-filter:blur(12px);
   }
-  .gallery-container.visible{opacity:1;transform:translateY(0);}
-  .gallery-container::-webkit-scrollbar{height:8px;}
-  .gallery-container::-webkit-scrollbar-thumb{background:#0a3d62;border-radius:10px;}
-  .gallery-item{min-width:280px;height:200px;border-radius:20px;overflow:hidden;flex-shrink:0;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.15);transition:transform 0.4s ease,box-shadow 0.4s ease;}
-  .gallery-item:hover{transform:scale(1.05);box-shadow:0 10px 25px rgba(0,0,0,0.25);}
-  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;}
-  .gallery-item:hover img{transform:scale(1.1);}
+  .qp-list{display:flex;flex-direction:column;gap:15px;margin-top:20px;}
+  .qp-item{
+    background:rgba(255,255,255,0.35);padding:12px 20px;border-radius:10px;text-decoration:none;
+    color:#0a3d62;font-weight:600;transition:0.3s;display:inline-block;
+  }
+  .qp-item:hover{background:#0a3d62;color:#fff;transform:translateY(-3px);}
 
-  .live-section {
+  /* GALLERY */
+  .gallery-container{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px;}
+  .gallery-item{min-width:280px;height:200px;border-radius:20px;overflow:hidden;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;}
+
+  /* CONTACT */
+  .contact-info{max-width:750px;margin:0 auto;text-align:left;background:rgba(255,255,255,0.25);padding:30px;border-radius:20px;}
+
+  /* FOOTER */
+ .live-section {
     display:flex;flex-wrap:wrap;justify-content:center;gap:40px;align-items:center;
   }
   .weather-box, .map-box {
@@ -173,35 +123,95 @@
   footer .live-info{margin-top:10px;font-size:0.95rem;color:#fff;}
   footer .live-info span{color:#ffd32a;font-weight:600;}
 
+
+  /* FLOATING WHATSAPP */
   .whatsapp-float{
     position:fixed;bottom:25px;right:25px;width:55px;height:55px;border-radius:50%;
     background:radial-gradient(circle at 30% 30%,#25d366,#128c7e);
-    display:flex;justify-content:center;align-items:center;z-index:1000;transition:all 0.3s ease;
+    display:flex;justify-content:center;align-items:center;z-index:1000;
   }
-  .whatsapp-float img{width:35px;height:35px;}
-  .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 10px 25px rgba(0,0,0,0.4);}
 
-  @media(max-width:768px){
-    .menu-toggle{display:flex;}
-    nav ul{display:none;}
-    .hero{padding:120px 15px;}
-    .hero h2{font-size:2rem;}
+  /* POPUP IMAGE */
+  #popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 30%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s ease;
   }
+
+  #popup-overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #popup-box {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: popScale 0.4s ease;
+  }
+
+  #popup-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #fff;
+  }
+
+  @keyframes popScale {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  #close-popup {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: red;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px #000;
+  }
+
 </style>
 </head>
 <body>
 
+<!-- POPUP IMAGE -->
+<div id="popup-overlay">
+  <div id="popup-box">
+    <button id="close-popup">✕</button>
+    <img src="https://powerful-salmon-cjszunc029.edgeone.app/banner%201.jpg" alt="Popup Image">
+  </div>
+</div>
+
+<!-- HEADER -->
 <header>
   <div class="logo-area">
     <img src="https://deliberate-amber-gfvdqe4djb.edgeone.app/logo.jpg" class="logo" alt="Logo">
     <h1>GEOID STUDY CENTRE</h1>
   </div>
+
   <div class="menu-toggle" id="menu-toggle"><div></div><div></div><div></div></div>
   <nav id="nav-menu">
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="notice.html">Notice</a></li>
-       <li><a href="member.html">About</a></li>
+      <li><a href="member.html">About</a></li>
       <li><a href="studentportal.html">Student Portal</a></li>
       <li><a href="course.html">Courses</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -213,6 +223,7 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="hero">
   <h2>শিক্ষা আনে চেতনা , চেতনা আনে বিপ্লব</h2>
   <p>Explore high-quality education with expert mentors and modern learning techniques.</p>
@@ -221,47 +232,36 @@
 
 <section class="about" id="about">
   <h2>Our Mission</h2>
-  <p>GEOID STUDY CENTRE-এ আমাদের লক্ষ্য হলো উচ্চমানের শিক্ষা এবং ব্যক্তিগতকৃত শিক্ষার মাধ্যমে শিক্ষার্থীদের ক্ষমতায়ন করা। আমরা এমন একটি শিক্ষাবান্ধব পরিবেশ তৈরি করার জন্য প্রতিশ্রুতিবদ্ধ, যেখানে প্রত্যেক শিক্ষার্থী উন্নতি করতে পারে এবং তার একাডেমিক লক্ষ্য অর্জন করতে পারে।</p>
-</section>
-
-<section class="donation" id="donation">
-  <h2>Donate For Our Foundation</h2>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6ideJ3nyW4f0S8-D3UYIJou2xaYjIleGWAQzGhf641RBkUQ/viewform?usp=dialog">Click Here</a>
+  <p>GEOID STUDY CENTRE-এ আমাদের লক্ষ্য হলো উচ্চমানের শিক্ষা এবং ব্যক্তিগতকৃত শিক্ষার মাধ্যমে শিক্ষার্থীদের ক্ষমতায়ন করা।</p>
 </section>
 
 <section id="courses">
   <h2>Our Courses</h2>
   <div class="courses">
-    <div class="course-card"><h3>WBBSE Class 9</h3><p>Subject - Geography</p></div>
-    <div class="course-card"><h3>WBBSE Class 10 (Madhyamik)</h3><p>Subject - Geography</p></div>
-    <div class="course-card"><h3>WBCHSE Class 11 & 12</h3><p>Subject - Geography</p></div>
+    <div class="course-card"><h3>WBBSE Class 9</h3><p>Geography</p></div>
+    <div class="course-card"><h3>WBBSE Class 10</h3><p>Geography</p></div>
+    <div class="course-card"><h3>WBCHSE Class 11 & 12</h3><p>Geography</p></div>
   </div>
 </section>
 
 <section id="question-paper">
-  <h2 style="display:flex; justify-content:center; align-items:center; gap:10px;">
-    Question Paper 
-    <span class="new-badge">NEW</span>
-  </h2>
-
+  <h2>Question Paper</h2>
   <div class="qp-container">
-    <p>Download all question papers in PDF format below:</p>
-
+    <p>Download all question papers below:</p>
     <div class="qp-list">
-      <a href="https://drive.google.com/file/d/1VIcdVnS4WIyxjRpiGnnESNA_Fo7yeQmZ/view?usp=sharing" class="qp-item" download>📄 Class 6 – Geography Question Paper</a>
-      <a href="https://drive.google.com/file/d/1D5fytmPna8IH1eDcZoaHoQYq8wIwGQQX/view?usp=sharing" class="qp-item" download>📄 Class 7 Geography Question Paper</a>
-      <a href="https://drive.google.com/file/d/1pAc5C6bGydz48pZ-0ZjR3iQCHCn0J1Ak/view?usp=sharing" class="qp-item" download>📄 Class 8 Geography Question Paper</a>
+      <a href="https://drive.google.com/file/d/1VIcdVnS4WIyxjRpiGnnESNA_Fo7yeQmZ/view?usp=sharing" class="qp-item">📄 Class 6 – Geography</a>
+      <a href="https://drive.google.com/file/d/1D5fytmPna8IH1eDcZoaHoQYq8wIwGQQX/view?usp=sharing" class="qp-item">📄 Class 7 – Geography</a>
+      <a href="https://drive.google.com/file/d/1pAc5C6bGydz48pZ-0ZjR3iQCHCn0J1Ak/view?usp=sharing" class="qp-item">📄 Class 8 – Geography</a>
     </div>
   </div>
 </section>
 
-
 <section class="gallery-section">
   <h2>Our Gallery</h2>
-  <div class="gallery-container" id="gallery">
-    <div class="gallery-item"><img src="https://confident-lavender-napbmekmcx.edgeone.app/banner.png" alt="picture 1"></div>
-    <div class="gallery-item"><img src="https://lh3.googleusercontent.com/ei90I5L5FQUnL0udchGInvfriBUHm2nsGunDTb4kD71IcyuXKwreou2csZhzilvEBvU5LgDY5dB_yb-HzVuHSAM" alt="picture 2"></div>
-    <div class="gallery-item"><img src="https://manual-sapphire-rdobo1mu73.edgeone.app/pic.jpg" alt="picture 3"></div>
+  <div class="gallery-container">
+    <div class="gallery-item"><img src="https://confident-lavender-napbmekmcx.edgeone.app/banner.png"></div>
+    <div class="gallery-item"><img src="https://lh3.googleusercontent.com/ei90I5L5FQUnL0udchGInvfriBUHm2nsGunDTb4kD71IcyuXKwreou2csZhzilvEBvU5LgDY5dB_yb-HzVuHSAM"></div>
+    <div class="gallery-item"><img src="https://manual-sapphire-rdobo1mu73.edgeone.app/pic.jpg"></div>
   </div>
 </section>
 
@@ -307,24 +307,25 @@
   <p>© 2025 GEOID STUDY CENTRE. All rights reserved.</p>
 </footer>
 
-<a href="https://wa.me/918207084112?text=What%20is%20your%20enquiry" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
+<a href="https://wa.me/918207084112?text=Hello" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
 </a>
 
 <script>
-  // Toggle Menu
-  const menuToggle=document.getElementById('menu-toggle');
-  const navMenu=document.getElementById('nav-menu');
-  menuToggle.addEventListener('click',()=>navMenu.classList.toggle('active'));
+  // MENU
+  document.getElementById("menu-toggle").onclick = () =>
+    document.getElementById("nav-menu").classList.toggle("active");
 
-  // Gallery Animation
-  const gallery=document.getElementById("gallery");
-  const observer=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){gallery.classList.add("visible");}
-    });
-  },{threshold:0.2});
-  observer.observe(gallery);
+  // POPUP
+  const popup = document.getElementById("popup-overlay");
+  const closePopup = document.getElementById("close-popup");
+
+  window.onload = () => {
+    setTimeout(() => popup.classList.add("active"), 500);
+  };
+
+  closePopup.onclick = () => popup.classList.remove("active");
+
 
   // Live Time Clock
   function updateTime(){
@@ -342,8 +343,7 @@
   document.getElementById("visitor-count").textContent=visits;
 </script>
 
+</script>
+
 </body>
 </html>
-
-
-
