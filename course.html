@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GEOID Study Centre | Courses</title>
+
 <style>
   body {
     font-family: "Noto Serif Bengali", serif;
@@ -16,21 +18,34 @@
     background-color: #003366;
     color: white;
     text-align: center;
-     font-family: "Noto Serif Bengali", serif;
-    padding: 20px;
+    padding: 15px;
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .header p {
+    margin: 5px 0 0;
+    font-size: 14px;
   }
 
   .nav {
     background-color: #cccccc;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .nav a {
-    margin-right: 15px;
     text-decoration: none;
     color: #000033;
     font-weight: bold;
-     font-family: kalpurush;
+    font-family: kalpurush, sans-serif;
+    font-size: 14px;
   }
 
   .nav a:hover {
@@ -38,9 +53,10 @@
   }
 
   .container {
-    width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
+    max-width: 1000px;
+    width: 90%;
+    margin: 15px auto;
+    padding: 15px;
     background-color: #fffacd;
     border: 1px solid #000033;
   }
@@ -49,31 +65,54 @@
     color: #003366;
     border-bottom: 2px solid #003366;
     padding-bottom: 5px;
+    font-size: 18px;
   }
 
   .section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .section ul {
     list-style-type: square;
     margin-left: 20px;
+    padding-left: 0;
   }
 
   .section ul li {
     margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .section a {
+    color: #000033;
+    text-decoration: none;
+  }
+
+  .section a:hover {
+    text-decoration: underline;
   }
 
   .footer {
     text-align: center;
     background-color: #003366;
     color: white;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 12px;
+    font-size: 13px;
   }
 
+  /* 📱 Extra Small Screen Fix */
+  @media (max-width: 480px) {
+    .header h1 {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+  }
 </style>
 </head>
+
 <body>
 
 <div class="header">
@@ -94,7 +133,7 @@
   <div class="section" id="resource">
     <h2>Resource</h2>
     <ul>
-      <a href="#question"><li>Question Paper</li></a>
+      <li><a href="#question">Question Paper</a></li>
     </ul>
   </div>
 
@@ -107,11 +146,10 @@
 
   <div class="section" id="syllabus">
     <h2>Syllabus</h2>
-    <a href="https://drive.google.com/file/d/1Ze604UZ7TOByjzKFYX1V4q3qr3Jtko0X/view"><li>Madhyamik Syllabus</li></a>
-    <a href="https://drive.google.com/file/d/173fkt6tGAuwvcR8sgZ4Gw3rdrqoxeiRl/view"><li>Class 11(Semester -1)</li></a>
-    <a href="https://drive.google.com/file/d/1xcbtPhHSTu7sZr4WC4IiHHAVrVfn1ik3/view"><li>Class - 9</li></a>
     <ul>
-      
+      <li><a href="https://drive.google.com/file/d/1Ze604UZ7TOByjzKFYX1V4q3qr3Jtko0X/view">Madhyamik Syllabus</a></li>
+      <li><a href="https://drive.google.com/file/d/173fkt6tGAuwvcR8sgZ4Gw3rdrqoxeiRl/view">Class 11 (Semester-1)</a></li>
+      <li><a href="https://drive.google.com/file/d/1xcbtPhHSTu7sZr4WC4IiHHAVrVfn1ik3/view">Class 9</a></li>
     </ul>
   </div>
 
@@ -119,22 +157,16 @@
     <h2>Free Class</h2>
     <ul>
       <li>Introductory session for new students</li>
-      
-      <li>Q&A session with instructors</li>
-      <li>Access via Zoom/Google Meet links</li>
+      <li>Q&amp;A session with instructors</li>
+      <li>Access via Zoom / Google Meet</li>
     </ul>
   </div>
 
 </div>
-Sukdeb Das
+
 <div class="footer">
-  &copy; 2025 GEOID Study Centre | Made in India
+  © 2025 GEOID Study Centre | Made in India
 </div>
 
 </body>
 </html>
-
-
-
-
-
