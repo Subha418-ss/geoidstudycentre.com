@@ -1,213 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEOID STUDY CENTRE - Admission Portal</title>
-<style>
-  body {
-    font-family: "Times New Roman", serif;
-    background-color: #f5f5dc;
-    color: #000033;
-    margin: 0;
-    padding: 0;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form | GEOID STUDY CENTRE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --accent: #ff0055; 
+            --accent-glow: rgba(255, 0, 85, 0.3);
+            --text: #e6edf3;
+            --text-dim: #8b949e;
+            --input-bg: #0d1117;
+            --border: rgba(255, 255, 255, 0.1);
+        }
 
-  #main {
-    max-width: 850px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border: 2px solid #000080;
-  }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 40px 20px; }
 
-  #header {
-    background-color: #000080;
-    color: #ffff00;
-    text-align: center;
-    padding: 10px;
-  }
+        .form-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
 
-  #header h1 {
-    font-size: 26px;
-    margin: 5px 0;
-  }
+        .form-header { text-align: center; margin-bottom: 40px; }
+        .form-header h2 { color: var(--accent); font-size: 2rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .form-header p { color: var(--text-dim); font-size: 0.9rem; }
 
-  #header p {
-    font-size: 16px;
-    margin: 0;
-  }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
 
-  marquee {
-    background-color: #ffff99;
-    color: #000;
-    font-weight: bold;
-    padding: 5px;
-  }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--text-dim); }
+        
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%; padding: 12px 15px; background: var(--input-bg);
+            border: 1px solid var(--border); border-radius: 10px; color: #fff; outline: none; transition: 0.3s;
+        }
 
-  #menu {
-    background-color: #dcdcdc;
-    text-align: center;
-    padding: 8px;
-    border-top: 1px solid #000080;
-    border-bottom: 1px solid #000080;
-  }
+        input[type="file"] {
+            padding: 8px; font-size: 0.8rem; background: rgba(255, 0, 85, 0.05);
+            border: 1px dashed var(--accent); cursor: pointer;
+        }
 
-  #menu a {
-    color: #000080;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
-  }
+        .full-width { grid-column: span 2; }
+        @media (max-width: 600px) { .full-width { grid-column: span 1; } }
 
-  #menu a:hover {
-    color: #ff0000;
-    text-decoration: underline;
-  }
+        .submit-btn {
+            width: 100%; padding: 16px; background: var(--accent); color: white;
+            border: none; border-radius: 50px; font-size: 1rem; font-weight: 600;
+            cursor: pointer; transition: 0.4s; margin-top: 20px;
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
 
-  #content {
-    padding: 20px;
-  }
+        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px var(--accent-glow); }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
+        .upload-section {
+            background: rgba(255,255,255,0.02); padding: 20px;
+            border-radius: 15px; border: 1px solid var(--border); margin-top: 10px;
+        }
 
-  td {
-    padding: 6px;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  textarea,
-  select {
-    width: 96%;
-    padding: 5px;
-    font-family: "Times New Roman", serif;
-    border: 1px solid #999;
-    background-color: #f9f9f9;
-  }
-
-  input[type="submit"],
-  input[type="reset"] {
-    background-color: #000080;
-    color: #ffff00;
-    border: none;
-    padding: 7px 15px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  input[type="submit"]:hover,
-  input[type="reset"]:hover {
-    background-color: #ffff00;
-    color: #000;
-  }
-
-  #footer {
-    background-color: #000080;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .note {
-    text-align: center;
-    font-size: 13px;
-    margin: 10px;
-  }
-
-  @media (max-width: 600px) {
-    #main {
-      width: 95%;
-      margin: 10px auto;
-    }
-
-    #header h1 {
-      font-size: 22px;
-    }
-
-    #content {
-      padding: 15px;
-    }
-
-    input, select, textarea {
-      font-size: 14px;
-    }
-  }
-</style>
+        .back-home { display: block; text-align: center; margin-top: 25px; color: var(--text-dim); text-decoration: none; }
+        .back-home:hover { color: var(--accent); }
+    </style>
 </head>
 <body>
 
-<div id="main">
-  <div id="header">
-    <h1>GEOID STUDY CENTRE</h1>
-    <p>ADMISSION PORTAL</p>
-  </div>
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Admission Form</h2>
+            <p>GEOID STUDY CENTRE | Session 2025-2026</p>
+        </div>
 
-  <marquee behavior="scroll" direction="left">
-    Welcome to GEOID STUDY CENTRE Admission Portal — Apply Now for 2026 Session!
-  </marquee>
+        <form action="https://www.formbackend.com/f/a9d563939554274f" method="POST" enctype="multipart/form-data">
+            <div class="form-grid">
+                
+                <div class="input-group">
+                    <label><i class="fas fa-user"></i> Student's Full Name</label>
+                    <input type="text" name="student_name" placeholder="Enter Full Name" required>
+                </div>
 
-  <div id="menu">
-    <a href="index.html">Home</a> |
-    <a href="course.html">Courses</a> |
-    <a href="notice.html">Notice</a> |
-    <a href="contact.html">Contact</a>
-  </div>
+                <div class="input-group">
+                    <label><i class="fas fa-user-friends"></i> Father's / Guardian's Name</label>
+                    <input type="text" name="guardian_name" placeholder="Enter Guardian Name" required>
+                </div>
 
-  
+                <div class="input-group">
+                    <label><i class="fas fa-school"></i> Select Class</label>
+                    <select name="class" required>
+                        <option value="">Choose Class</option>
+                        <option value="Class 5">Class 5</option>
+                        <option value="Class 6">Class 6</option>
+                        <option value="Class 7">Class 7</option>
+                        <option value="Class 8">Class 8</option>
+                        <option value="Class 9">Class 9</option>
+                        <option value="Class 10">Class 10</option>
+                        <option value="Class 11">Class 11</option>
+                        <option value="Class 12">Class 12</option>
+                    </select>
+                </div>
 
-    <hr><br>
+                <div class="input-group">
+                    <label><i class="fas fa-calendar-alt"></i> Date of Birth</label>
+                    <input type="date" name="dob" required>
+                </div>
 
-    <!-- FORM 2: Formester Embed -->
-    <script src="https://alatvsxv.formester.com/widget/standard.js" type="module"></script>
+                <div class="input-group">
+                    <label><i class="fas fa-phone-alt"></i> WhatsApp Number</label>
+                    <input type="tel" name="phone" placeholder="Enter 10 Digit Number" required>
+                </div>
 
-    <formester-standard-form
-      set-auto-height="true"
-      height="100%"
-      width="100%"
-      id="4FtItUYtm"
-      url="https://alatvsxv.formester.com/f/4FtItUYtm">
-    </formester-standard-form>
+                <div class="input-group">
+                    <label><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" name="email" placeholder="example@mail.com" required>
+                </div>
 
-  </div>
+                <div class="full-width upload-section">
+                    <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--accent); font-weight: 600;">
+                        <i class="fas fa-file-upload"></i> Document Upload
+                    </p>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Passport Photo (JPG/PNG)</label>
+                            <input type="file" name="photo" accept="image/*">
+                        </div>
+                      
+                    </div>
+                </div>
 
-  <div id="footer">
-    &copy; 2025 GEOID STUDY CENTRE | All Rights Reserved
-  </div>
-</div>
+                <div class="input-group full-width">
+                    <label><i class="fas fa-map-marker-alt"></i> Full Postal Address</label>
+                    <textarea name="address" rows="3" placeholder="Village/Town, Post, District, PIN" required></textarea>
+                </div>
+            </div>
 
-<div class="note">
-  <p><b>Build by Subhadip Satpati</b></p>
-</div>
+            <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
+        </form>
 
-<script>
-function generateCaptcha() {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let code = "";
-  for (let i = 0; i < 5; i++) {
-    code += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  document.getElementById("captcha").value = code;
-}
-
-function validateCaptcha() {
-  const c1 = document.getElementById("captcha").value.trim();
-  const c2 = document.getElementById("userCaptcha").value.trim();
-  if (c1 !== c2) {
-    alert("Captcha does not match! Please try again.");
-    generateCaptcha();
-    return false;
-  }
-  return true;
-}
-
-window.onload = generateCaptcha;
-</script>
+        <a href="index.html" class="back-home"><i class="fas fa-chevron-left"></i> Back to Portal Home</a>
+    </div>
 
 </body>
 </html>
