@@ -1,229 +1,425 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geoid Study Centre | Season's Greetings</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&family=Hind+Siliguri:wght@500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --xmas-red: #b33939;
-            --xmas-green: #218c74;
-            --deep-navy: #0c2461;
-            --glass-white: rgba(255, 255, 255, 0.9);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEOID STUDY CENTRE | Learn. Grow. Excel.</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+  body{background:linear-gradient(135deg,#e0eafc,#cfdef3);color:#222;overflow-x:hidden;}
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--deep-navy);
-            
-            /* Professional Christmas Background Texture */
-            background-color: #0c2461;
-            background-image: 
-                url("https://www.transparenttextures.com/patterns/snow.png"), /* Snow Texture Overlay */
-                radial-gradient(circle at top, #1e3799, #0c2461); /* Deep Winter Sky Gradient */
-            background-attachment: fixed;
-        }
+  /* HEADER */
+  header{
+    background:rgba(10,61,98,0.9);
+    backdrop-filter:blur(10px);
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+    position:sticky;
+    top:0;
+    z-index:1000;
+  }
+  header .logo-area{display:flex;align-items:center;gap:10px;}
+  header img.logo{width:55px;height:55px;border-radius:50%;object-fit:cover;box-shadow:0 3px 8px rgba(0,0,0,0.3);}
+  header h1{font-size:1.8rem;text-shadow:2px 2px 8px rgba(0,0,0,0.3);}
+  nav ul{display:flex;gap:20px;list-style:none;}
+  nav ul li a{
+    color:#fff;text-decoration:none;font-weight:500;position:relative;transition:0.3s;font-size:1rem;
+  }
+  nav ul li a::after{
+    content:'';position:absolute;width:0;height:2px;left:0;bottom:-3px;background:#ffd32a;transition:0.4s;
+  }
+  nav ul li a:hover::after{width:100%;}
 
-        /* Professional Festive Header */
-        header {
-            width: 100%;
-            padding: 60px 0;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            position: relative;
-        }
+  /* HAMBURGER MENU */
+  .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;}
+  .menu-toggle div{width:28px;height:3px;background:#fff;border-radius:2px;}
+  nav.active ul{display:flex;flex-direction:column;align-items:center;gap:15px;padding:20px 0;}
+  nav.active{background:rgba(10,61,98,0.95);position:absolute;top:70px;left:0;width:100%;border-top:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 15px rgba(0,0,0,0.3);}
 
-        /* Festive Top Border */
-        header::before {
-            content: '❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️';
-            position: absolute;
-            top: 10px;
-            width: 100%;
-            color: white;
-            letter-spacing: 20px;
-            opacity: 0.6;
-            font-size: 1rem;
-        }
+  /* HERO SECTION */
+  .hero{
+    background:linear-gradient(rgba(10,61,98,0.7),rgba(0,0,0,0.7)),url('https://confident-lavender-napbmekmcx.edgeone.app/banner.png') center/cover no-repeat;
+    color:white;text-align:center;padding:160px 20px;position:relative;overflow:hidden;
+  }
+  .hero h2{font-size:2.8rem;margin-bottom:15px;text-shadow:2px 2px 12px rgba(0,0,0,0.5);animation:floatText 6s ease-in-out infinite;}
+  .hero p{font-size:1.2rem;margin-bottom:30px;opacity:0.9;}
+  .hero a{
+    background:linear-gradient(135deg,#ffd32a,#ffb703);
+    color:#000;padding:14px 35px;border-radius:30px;font-weight:600;text-decoration:none;
+    box-shadow:0 8px 25px rgba(255,211,42,0.4);transition:all 0.3s ease;
+  }
+  .hero a:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(255,211,42,0.6);}
+  @keyframes floatText{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 
-        /* Logo Container with a Festive Wreath Style */
-        .logo-container {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
-            background: white;
-            padding: 10px;
-            border-radius: 50%;
-            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255,255,255,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 4px solid var(--xmas-red); /* Festive Red Border */
-            position: relative;
-        }
+  section{padding:80px 50px;text-align:center;}
+  section h2{
+    color:#c33a14;font-size:2rem;font-family:Noto Serif Bengali,'Times New Roman',Times,serif;margin-bottom:25px;
+    text-shadow:1px 1px 3px rgba(0,0,0,0.15);
+  }
+  section h2::after{content:"";width:80px;height:4px;background:linear-gradient(90deg,#01e1ff,#00b4d8);display:block;margin:10px auto 0;border-radius:2px;box-shadow:0 2px 6px rgba(0,180,216,0.4);}
 
-        .logo-container img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
-        }
+  .about p{
+    max-width:900px;margin:0 auto;font-size:1.2rem;font-family:Noto Serif Bengali;line-height:1.8;color:#444;
+    background:rgba(255,255,255,0.15);backdrop-filter:blur(12px);padding:30px;border-radius:20px;
+    box-shadow:10px 10px 20px rgba(0,0,0,0.05),-10px -10px 20px rgba(255,255,255,0.3);
+  }
 
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.8rem;
-            margin: 0;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
+  .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:40px;margin-top:40px;}
+  .course-card{
+    background:rgba(255,255,255,0.2);backdrop-filter:blur(15px);border-radius:20px;padding:30px;
+    transition:all 0.3s ease;box-shadow:10px 10px 20px rgba(0,0,0,0.08),-10px -10px 20px rgba(255,255,255,0.3);
+  }
+  .course-card:hover{transform:translateY(-10px);box-shadow:0 15px 35px rgba(0,0,0,0.2),0 0 30px rgba(0,180,216,0.2);}
+  .course-card h3{color:#0a3d62;margin-bottom:12px;font-size:1.3rem;}
+  .course-card p{color:#555;font-size:0.95rem;}
 
-        .bn-title {
-            font-family: 'Hind Siliguri', sans-serif;
-            font-size: 1.8rem;
-            color: #d1d8e0;
-            margin-top: 10px;
-            font-weight: 500;
-        }
+  /* Question Paper Section */
+#question-paper {
+  padding: 80px 50px;
+  text-align: center;
+}
 
-        /* Portal Grid */
-        .portal-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            width: 90%;
-            padding-bottom: 80px;
-        }
+.new-badge {
+  background: linear-gradient(45deg, red, green, blue);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  animation: rgbBlink 1s infinite;
+}
 
-        /* Christmas Card Style */
-        .portal-card {
-            background: var(--glass-white);
-            padding: 45px 20px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.5);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
+@keyframes rgbBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
 
-        .portal-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            background: white;
-            border-color: var(--xmas-red);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
+.qp-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 10px 10px 25px rgba(0,0,0,0.08);
+}
 
-        /* English (1st) and Bengali (2nd) Labels */
-        .en-label {
-            display: block;
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--deep-navy);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
-        }
+.qp-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-        .bn-label {
-            display: block;
-            font-family: 'Hind Siliguri', sans-serif;
-            font-size: 1.5rem;
-            color: var(--xmas-green);
-            font-weight: 700;
-        }
+.qp-item {
+  background: rgba(255,255,255,0.35);
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #0a3d62;
+  font-weight: 600;
+  transition: 0.3s;
+  display: inline-block;
+}
 
-        /* Small Festive Icon on Hover */
-        .portal-card::after {
-            content: '🎁';
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.2rem;
-            opacity: 0;
-            transition: 0.3s;
-        }
+.qp-item:hover {
+  background: #0a3d62;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+/* GALLERY */
+  .gallery-container {
+    display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px;
+    scrollbar-width:thin;scrollbar-color:#0a3d62 #e0e0e0;opacity:0;transform:translateY(40px);
+    transition:opacity 1s ease,transform 1s ease;
+  }
+  .gallery-container.visible{opacity:1;transform:translateY(0);}
+  .gallery-container::-webkit-scrollbar{height:8px;}
+  .gallery-container::-webkit-scrollbar-thumb{background:#0a3d62;border-radius:10px;}
+  .gallery-item{min-width:280px;height:200px;border-radius:20px;overflow:hidden;flex-shrink:0;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.15);transition:transform 0.4s ease,box-shadow 0.4s ease;}
+  .gallery-item:hover{transform:scale(1.05);box-shadow:0 10px 25px rgba(0,0,0,0.25);}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;}
+  .gallery-item:hover img{transform:scale(1.1);}
 
-        .portal-card:hover::after {
-            opacity: 1;
-        }
+  .live-section {
+    display:flex;flex-wrap:wrap;justify-content:center;gap:40px;align-items:center;
+  }
+  .weather-box, .map-box {
+    background:rgba(255,255,255,0.25);backdrop-filter:blur(15px);
+    border-radius:20px;padding:25px;box-shadow:10px 10px 25px rgba(0,0,0,0.08);
+    flex:1 1 350px;min-height:250px;
+  }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .portal-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+  .contact-info{max-width:800px;margin:0 auto;text-align:left;background:rgba(255,255,255,0.25);backdrop-filter:blur(12px);padding:30px;border-radius:20px;box-shadow:10px 10px 25px rgba(0,0,0,0.08);}
+  .contact-info p{margin-bottom:12px;}
+  .contact-info strong{color:#0a3d62;}
 
-        @media (max-width: 600px) {
-            .portal-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 1.8rem; }
-            .bn-title { font-size: 1.3rem; }
-        }
-    </style>
+  footer{
+    background:linear-gradient(135deg,#0a3d62,#012a4a);
+    color:#fff;padding:50px 20px;text-align:center;
+    box-shadow:0 -8px 25px rgba(0,0,0,0.2);
+  }
+  footer .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-bottom:15px;}
+  footer .footer-links a{color:#ffd32a;text-decoration:none;transition:0.3s;}
+  footer .footer-links a:hover{color:#fff;text-shadow:0 0 10px #ffd32a;}
+  footer .madein{font-size:0.85rem;color:#ffd32a;margin-top:8px;}
+  footer .live-info{margin-top:10px;font-size:0.95rem;color:#fff;}
+  footer .live-info span{color:#ffd32a;font-weight:600;}
+
+  .whatsapp-float{
+    position:fixed;bottom:25px;right:25px;width:55px;height:55px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#25d366,#128c7e);
+    display:flex;justify-content:center;align-items:center;z-index:1000;transition:all 0.3s ease;
+  }
+  .whatsapp-float img{width:35px;height:35px;}
+  .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 10px 25px rgba(0,0,0,0.4);}
+
+  @media(max-width:768px){
+    .menu-toggle{display:flex;}
+    nav ul{display:none;}
+    .hero{padding:120px 15px;}
+    .hero h2{font-size:2rem;}
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="https://deliberate-amber-gfvdqe4djb.edgeone.app/logo.jpg" alt="Geoid Logo">
+  <!-- Popup Background -->
+<div id="popup-overlay"
+     style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); display: flex; justify-content: center; 
+            align-items: center; z-index: 9999; visibility: hidden;">
+    
+    <!-- Popup Box -->
+    <div style="position: relative; background: white; padding: 5px; border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.3); max-width: 95%; max-height: 95%;">
+        
+        <!-- Close Button -->
+        <span onclick="closePopup()" 
+              style="position: absolute; top: -12px; right: -12px; background: red;
+                     color: white; width: 28px; height: 28px; display: flex; 
+                     justify-content: center; align-items: center; cursor: pointer;
+                     border-radius: 50%; font-weight: bold; font-size: 18px;">
+            ×
+        </span>
+
+        <!-- Popup Image -->
+        <img src="/mnt/data/7d209d8e-c2a0-403c-843a-af09ac77f28c.jpg"
+             style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+</div>
+
+<script>
+  // Show popup automatically when website opens
+  window.onload = function () {
+    document.getElementById("popup-overlay").style.visibility = "visible";
+  };
+
+  function closePopup() {
+    document.getElementById("popup-overlay").style.visibility = "hidden";
+  }
+</script>
+
+
+<header>
+  <div class="logo-area">
+    <img src="https://deliberate-amber-gfvdqe4djb.edgeone.app/logo.jpg" class="logo" alt="Logo">
+    <h1>GEOID STUDY CENTRE</h1>
+  </div>
+  <div class="menu-toggle" id="menu-toggle"><div></div><div></div><div></div></div>
+  <nav id="nav-menu">
+    <ul>
+      
+      <li><a href="#hero">Home</a></li>
+      <li><a href="notice.html">Notice</a></li>
+       <li><a href="member.html">About</a></li>
+      <li><a href="studentportal.html">Student Portal</a></li>
+      <li><a href="course.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="ourteam.html">Our Team</a></li>
+      <li><a href="commiunity.html">Community</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="id.html">News & Update</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <h2>শিক্ষা আনে চেতনা , চেতনা আনে বিপ্লব</h2>
+  <p>Explore high-quality education with expert mentors and modern learning techniques.</p>
+  <a href="#courses">Explore Courses</a>
+</section>
+
+<!-- Madhyamik Mock Test 2026 Section -->
+<div class="mock-test-section" style="max-width:800px; margin:40px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-family:Arial, sans-serif;">
+    <h2 style="text-align:center; color:#2c3e50;">Madhyamik Mock Test 2026</h2>
+    <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:center; margin-top:20px;">
+        <!-- Test Image -->
+        <img src="https://img.sanishtech.com/u/6184ffe0d21d031e8bef6c04b7a576e4.jpg" alt="Madhyamik Mock Test 2026" style="width:150px; height:auto; border-radius:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+
+        <!-- PDF Preview -->
+        <div style="flex:1; min-width:200px;">
+            <p style="margin-bottom:10px;">Click below to preview the question PDF:</p>
+            <a href="madhyamik-mocktest-2026.pdf" target="_blank" style="display:inline-block; padding:10px 20px; background:#3498db; color:#fff; text-decoration:none; border-radius:5px; transition:0.3s;">Preview PDF</a>
         </div>
-        <h1>Geoid Study Centre</h1>
-        <div class="bn-title">জিওড স্টাডি সেন্টার</div>
-        <p style="color: white; opacity: 0.8; margin-top: 15px;">This Website is open on 25 December</p>
-    </header>
+    </div>
+</div>
 
-    <main class="portal-grid">
-        <a href="https://subha418-ss.github.io/geoidstudycentre/" class="portal-card">
-            <span class="en-label">Main Website</span>
-            <span class="bn-label">প্রধান ওয়েবসাইট</span>
-        </a>
 
-        <a href="#" class="portal-card">
-            <span class="en-label">Student Portal</span>
-            <span class="bn-label">ছাত্র পোর্টাল</span>
-        </a>
 
-        <a href="#" class="portal-card">
-            <span class="en-label">Exam Results</span>
-            <span class="bn-label">পরীক্ষার ফলাফল</span>
-        </a>
+<section class="about" id="about">
+  <h2>Our Mission</h2>
+  <p>GEOID STUDY CENTRE-এ আমাদের লক্ষ্য হলো উচ্চমানের শিক্ষা এবং ব্যক্তিগতকৃত শিক্ষার মাধ্যমে শিক্ষার্থীদের ক্ষমতায়ন করা। আমরা এমন একটি শিক্ষাবান্ধব পরিবেশ তৈরি করার জন্য প্রতিশ্রুতিবদ্ধ, যেখানে প্রত্যেক শিক্ষার্থী উন্নতি করতে পারে এবং তার একাডেমিক লক্ষ্য অর্জন করতে পারে।</p>
+</section>
 
-        <a href="register.html" class="portal-card">
-            <span class="en-label">Admission 2026</span>
-            <span class="bn-label">ভর্তি ২০২৬</span>
-        </a>
+<section class="donation" id="donation">
+  <h2>Donate For Our Foundation</h2>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6ideJ3nyW4f0S8-D3UYIJou2xaYjIleGWAQzGhf641RBkUQ/viewform?usp=dialog">Click Here</a>
+</section>
 
-        <a href="upi.html" class="portal-card">
-            <span class="en-label">Digital Library</span>
-            <span class="bn-label">ডিজিটাল লাইব্রেরি</span>
-        </a>
+<section id="courses">
+  <h2>Our Courses</h2>
+  <div class="courses">
+    <div class="course-card"><h3>WBBSE Class 9</h3><p>Subject - Geography</p></div>
+    <div class="course-card"><h3>WBBSE Class 10 (Madhyamik)</h3><p>Subject - Geography</p></div>
+    <div class="course-card"><h3>WBCHSE Class 11 & 12</h3><p>Subject - Geography</p></div>
+  </div>
+</section>
 
-        <a href="#" class="portal-card">
-            <span class="en-label">Help Desk</span>
-            <span class="bn-label">সহায়তা কেন্দ্র</span>
-        </a>
-    </main>
+<section id="question-paper">
+  <h2 style="display:flex; justify-content:center; align-items:center; gap:10px;">
+    Question Paper 
+    <span class="new-badge">NEW</span>
+  </h2>
 
-    <footer style="margin-bottom: 40px; color: rgba(255,255,255,0.6); font-size: 0.85rem; letter-spacing: 1px;">
-        &copy; 2025 GEOID STUDY CENTRE | Season's Greetings 🎄
-    </footer>
+  <div class="qp-container">
+    <p>Download all question papers in PDF format below:</p>
+
+    <div class="qp-list">
+      <a href="https://drive.google.com/file/d/1VIcdVnS4WIyxjRpiGnnESNA_Fo7yeQmZ/view?usp=sharing" class="qp-item" download>📄 Class 6 – Geography Question Paper</a>
+      <a href="https://drive.google.com/file/d/1D5fytmPna8IH1eDcZoaHoQYq8wIwGQQX/view?usp=sharing" class="qp-item" download>📄 Class 7 Geography Question Paper</a>
+      <a href="https://drive.google.com/file/d/1pAc5C6bGydz48pZ-0ZjR3iQCHCn0J1Ak/view?usp=sharing" class="qp-item" download>📄 Class 8 Geography Question Paper</a>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="gallery-section">
+  <h2>Our Gallery</h2>
+  <div class="gallery-container" id="gallery">
+    <div class="gallery-item"><img src="https://confident-lavender-napbmekmcx.edgeone.app/banner.png" alt="picture 1"></div>
+    <div class="gallery-item"><img src="https://lh3.googleusercontent.com/ei90I5L5FQUnL0udchGInvfriBUHm2nsGunDTb4kD71IcyuXKwreou2csZhzilvEBvU5LgDY5dB_yb-HzVuHSAM" alt="picture 2"></div>
+    <div class="gallery-item"><img src="https://manual-sapphire-rdobo1mu73.edgeone.app/pic.jpg" alt="picture 3"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Live Weather, Time & Location</h2>
+  <div class="live-section">
+    <div class="weather-box">
+      <div id="ww_8e836f98f9a75" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl658"],"font":"Times","sl_ics":"one","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
+        <a href="https://weatherwidget.org/" id="ww_8e836f98f9a75_u" target="_blank">Html weather widget</a>
+      </div>
+      <script async src="https://app3.weatherwidget.org/js/?id=ww_8e836f98f9a75"></script>
+    </div>
+    <div class="map-box">
+      <iframe src="https://www.google.com/maps?q=GEOID%20STUDY%20CENTRE%20Contai&output=embed" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-info">
+    <p><strong>Address:</strong> Contai, Central Bustand, Kishorenagar Road, Near Delhi Bazaar, Purba Medinipur, West Bengal, 721401</p>
+    <p><strong>Phone:</strong> +91 8207084112</p>
+    <p><strong>Email:</strong> geoidstudycentre@gmail.com</p>
+    <p><strong>Office Hours:</strong> Mon–Sat, 9 AM – 6 PM</p>
+  </div>
+</section>
+
+
+ <div data-key="Grid Logo Showcase " class="ft" id="ftviy6ohtj">
+ </div>
+ <script src="https://wdg.fouita.com/widgets/0x37a3bc.js"></script>
+ 
+
+ <div data-key="Support Phone Chat " class="ft" id="ftxp6cibv">
+ </div>
+ <script src="https://wdg.fouita.com/widgets/0x36e762.js"></script>
+ 
+ 
+<footer>
+  <div class="footer-links">
+    <a href="disclaimer.html">Disclaimer</a> |
+    <a href="privacypolicy.html">Privacy Policy</a> |
+    <a href="retuntpolicy.html">Return & Refund</a> |
+    <a href="#contact">Contact</a> |
+    <a href="#">Location</a> |
+    <a href="#">Website Developer</a> |
+    <span>Version 2.1.0</span>
+  </div>
+
+ <div data-key="Popup Special Discount" class="ft" id="ft7f0yww3">
+ </div>
+ <script src="https://wdg.fouita.com/widgets/0x36e894.js"></script>
+ 
+
+  <div class="live-info">
+    🕒 <span id="live-time">--:--:--</span> &nbsp; | &nbsp; 👥 Visitors: <span id="visitor-count">0</span>
+  </div>
+  <!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com/" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=21462170&style=0008&nbdigits=5&type=page&initCount=0" title="Free Tools" Alt="Free Tools"   border="0" /></a>            
+  <p class="madein">❤ Made in India</p>
+  <p>© 2025 GEOID STUDY CENTRE. All rights reserved.</p>
+  <p class="">Website Developed By - Subhadip Satpati</p>
+</footer>
+
+<a href="https://wa.me/918207084112?text=What%20is%20your%20enquiry" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
+</a>
+
+<script>
+  // Toggle Menu
+  const menuToggle=document.getElementById('menu-toggle');
+  const navMenu=document.getElementById('nav-menu');
+  menuToggle.addEventListener('click',()=>navMenu.classList.toggle('active'));
+
+  // Gallery Animation
+  const gallery=document.getElementById("gallery");
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){gallery.classList.add("visible");}
+    });
+  },{threshold:0.2});
+  observer.observe(gallery);
+
+  // Live Time Clock
+  function updateTime(){
+    const now=new Date();
+    document.getElementById("live-time").textContent=now.toLocaleTimeString();
+  }
+  setInterval(updateTime,1000);
+  updateTime();
+
+  // Visitor Counter (localStorage based)
+  let visits=localStorage.getItem("geoid_visits");
+  if(!visits){visits=0;}
+  visits++;
+  localStorage.setItem("geoid_visits",visits);
+  document.getElementById("visitor-count").textContent=visits;
+</script>
 
 </body>
 </html>
-
-
-
